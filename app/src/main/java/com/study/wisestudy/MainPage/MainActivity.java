@@ -1,8 +1,10 @@
-package com.study.wisestudy;
+package com.study.wisestudy.MainPage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.study.wisestudy.R;
 
 public class MainActivity extends AppCompatActivity {
 
