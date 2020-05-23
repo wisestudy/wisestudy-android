@@ -1,28 +1,27 @@
 package com.study.wisestudy.MainPage;
 
-import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerViewData {
-    private int pic;
+    private int picture;
     private String title;
     private String contents;
-    private String Date;
+    private String date;
 
 
-    public RecyclerViewData(int p,String t,String c,String d) {
-        this.pic=p;
-        this.title=t;
-        this.contents=c;
-        this.Date=d;
+    public RecyclerViewData(int picture,String title,String contents,String date) {
+        this.picture=picture;
+        this.title=title;
+        this.contents=contents;
+        this.date=date;
     }
-    public RecyclerViewData(String t,String c,String d){
-        this.title=t;
-        this.contents=c;
-        this.Date=d;
+    public RecyclerViewData(String title,String contents,String date){
+        this.title=title;
+        this.contents=contents;
+        this.date=date;
     }
 
     public int getPic() {
-        return pic;
+        return picture;
     }
 
     public String getContents() {
@@ -30,7 +29,7 @@ public class RecyclerViewData {
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
     public String getTitle() {
@@ -42,11 +41,11 @@ public class RecyclerViewData {
     }
 
     public void setDate(String date) {
-        Date = date;
+        date = date;
     }
 
-    public void setPic(int pic) {
-        this.pic = pic;
+    public void setPic(int picture) {
+        this.picture = picture;
     }
 
     public void setTitle(String title) {

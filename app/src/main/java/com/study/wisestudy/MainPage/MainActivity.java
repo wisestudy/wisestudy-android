@@ -10,15 +10,15 @@ import android.widget.Button;
 import com.study.wisestudy.R;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Button calendarIntentButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button b=(Button)findViewById(R.id.btn);
+        calendarIntentButton=findViewById(R.id.calendarIntentBtn);
 
-        b.setOnClickListener(new View.OnClickListener() {
+        calendarIntentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getApplicationContext(),MainPageCalendarActivity.class);

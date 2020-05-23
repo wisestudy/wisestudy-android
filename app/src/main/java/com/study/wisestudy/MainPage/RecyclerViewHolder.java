@@ -11,16 +11,16 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
-    CircleImageView Iv; //이미지뷰
-    TextView Dv;        //날짜텍스트
-    TextView Tv;        //제목텍스트
-    TextView Cv;        //내용텍스트
+    CircleImageView imageView;
+    TextView dateView;
+    TextView titleView;
+    TextView contensView;
     public RecyclerViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        Iv=itemView.findViewById(R.id.image_id);
-        Dv=itemView.findViewById(R.id.date_id);
-        Tv=itemView.findViewById(R.id.title_id);
-        Cv=itemView.findViewById(R.id.contents_id);
+        imageView=itemView.findViewById(R.id.imageId);
+        dateView=itemView.findViewById(R.id.dateId);
+        titleView=itemView.findViewById(R.id.titleId);
+        contensView=itemView.findViewById(R.id.contentsId);
     }
 }

@@ -12,32 +12,34 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
-    private ArrayList<RecyclerViewData> R_DataList=null;
+    private ArrayList<RecyclerViewData> recyclerDataList=null;
     RecyclerViewAdapter(ArrayList<RecyclerViewData> dataList){
-        R_DataList=dataList;
+        recyclerDataList=dataList;
     }
+    private RecyclerViewHolder viewHolder;
+    private View view;
     @NonNull
     @Override
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context=parent.getContext();
         LayoutInflater inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View view=inflater.inflate(R.layout.activity_recyclerview,parent,false);
-        RecyclerViewHolder viewHolder=new RecyclerViewHolder(view);
+        view=inflater.inflate(R.layout.activity_recyclerview,parent,false);
+        viewHolder=new RecyclerViewHolder(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
-        holder.Iv.setImageResource(R_DataList.get(position).getPic());
-        holder.Dv.setText(R_DataList.get(position).getDate());
-        holder.Tv.setText(R_DataList.get(position).getTitle());
-        holder.Cv.setText(R_DataList.get(position).getContents());
+        holder.imageView.setImageResource(recyclerDataList.get(position).getPic());
+        holder.dateView.setText(recyclerDataList.get(position).getDate());
+        holder.titleView.setText(recyclerDataList.get(position).getTitle());
+        holder.contensView.setText(recyclerDataList.get(position).getContents());
     }
 
 
     @Override
     public int getItemCount() {
-        return R_DataList.size();
+        return recyclerDataList.size();
     }
 }
