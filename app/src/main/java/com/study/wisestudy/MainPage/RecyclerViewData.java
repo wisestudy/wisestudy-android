@@ -41,7 +41,7 @@ public class RecyclerViewData {
     }
 
     public void setDate(String date) {
-        date = date;
+        this.date = date;
     }
 
     public void setPic(int picture) {
