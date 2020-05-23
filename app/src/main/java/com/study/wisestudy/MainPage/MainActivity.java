@@ -16,12 +16,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        calendarIntentButton=findViewById(R.id.calendarIntentBtn);
+        calendarIntentButton = findViewById(R.id.calendarIntentBtn);
 
         calendarIntentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),MainPageCalendarActivity.class);
+                Intent intent = new Intent(getApplicationContext(),MainPageCalendarActivity.class);
                 startActivity(intent);
 
             }

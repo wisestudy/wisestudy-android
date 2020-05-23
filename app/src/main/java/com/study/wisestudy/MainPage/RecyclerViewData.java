@@ -2,26 +2,26 @@ package com.study.wisestudy.MainPage;
 
 
 public class RecyclerViewData {
-    private int picture;
+    private int imageIndex;
     private String title;
     private String contents;
     private String date;
 
 
-    public RecyclerViewData(int picture,String title,String contents,String date) {
-        this.picture=picture;
-        this.title=title;
-        this.contents=contents;
-        this.date=date;
+    public RecyclerViewData(int imageIndex, String title, String contents, String date) {
+        this.imageIndex = imageIndex;
+        this.title = title;
+        this.contents = contents;
+        this.date = date;
     }
-    public RecyclerViewData(String title,String contents,String date){
-        this.title=title;
-        this.contents=contents;
-        this.date=date;
+    public RecyclerViewData(String title, String contents, String date){
+        this.title = title;
+        this.contents = contents;
+        this.date = date;
     }
 
-    public int getPic() {
-        return picture;
+    public int getImageIndex() {
+        return imageIndex;
     }
 
     public String getContents() {
@@ -44,8 +44,8 @@ public class RecyclerViewData {
         this.date = date;
     }
 
-    public void setPic(int picture) {
-        this.picture = picture;
+    public void setImageIndex(int imageIndex) {
+        this.imageIndex = imageIndex;
     }
 
     public void setTitle(String title) {
