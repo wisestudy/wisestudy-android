@@ -12,11 +12,12 @@ import com.study.wisestudy.R;
 
 public class LadingPageLoginActivity extends AppCompatActivity
 {
+    private Button loginButton;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.landing_page_login);
-        Button Login = (Button) findViewById(R.id.Login_Btn);
-        Login.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_landingpage_login);
+        loginButton = (Button) findViewById(R.id.loginBtn);
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getApplicationContext(),InsertProfileActivity.class);

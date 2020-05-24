@@ -11,6 +11,6 @@ public class LandingPageStartActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.landing_page_start);
+        setContentView(R.layout.activity_landingpage_start);
     }
 }
