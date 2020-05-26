@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.study.wisestudy.MainPage.RecyclerView.RecyclerViewAdapter;
+import com.study.wisestudy.MainPage.RecyclerView.RecyclerViewData;
 import com.study.wisestudy.R;
 
 import java.util.ArrayList;
@@ -18,7 +20,6 @@ public class MainPageCalendarActivity extends AppCompatActivity {
     private ArrayList<RecyclerViewData> recyclerDataList;
     private RecyclerView recyclerView;
     private LinearLayoutManager manager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
