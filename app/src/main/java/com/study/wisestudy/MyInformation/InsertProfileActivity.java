@@ -1,4 +1,6 @@
 package com.study.wisestudy.MyInformation;
 
-public class InsertProfileActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class InsertProfileActivity extends AppCompatActivity {
 }
