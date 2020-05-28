@@ -52,7 +52,7 @@
             app:layout_constraintTop_toBottomOf="@+id/nameRectangle" />
 
         <View
-            android:id="@+id/line2"
+            android:id="@+id/phoneLine"
             android:layout_width="0dp"
             android:layout_height="3dp"
             android:layout_marginStart="30dp"
@@ -68,7 +68,7 @@
             app:layout_constraintTop_toBottomOf="@+id/phoneView" />
 
         <View
-            android:id="@+id/line"
+            android:id="@+id/nameLine"
             android:layout_width="0dp"
             android:layout_height="3dp"
             android:layout_marginStart="30dp"
@@ -84,7 +84,7 @@
             app:layout_constraintTop_toBottomOf="@+id/nameView" />
 
         <View
-            android:id="@+id/line4"
+            android:id="@+id/departmentLine"
             android:layout_width="0dp"
             android:layout_height="3dp"
             android:layout_marginStart="30dp"
@@ -97,7 +97,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/departmentView2" />
+            app:layout_constraintTop_toBottomOf="@+id/departmentView" />
 
         <ImageButton
             android:id="@+id/profilePicture"
@@ -155,7 +155,7 @@
             app:layout_constraintTop_toBottomOf="@+id/phoneRectangle" />
 
         <EditText
-            android:id="@+id/departmentView2"
+            android:id="@+id/departmentView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -176,7 +176,7 @@
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/line4" />
+            app:layout_constraintTop_toBottomOf="@+id/departmentLine" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
