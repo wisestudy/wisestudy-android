@@ -12,7 +12,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="28dp"
-        android:background="@drawable/menu_red_rectangle"
+        android:background="@drawable/activity_myinformation_rectangle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -72,7 +72,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="23dp"
-            android:background="@drawable/menu_red_rectangle"
+            android:background="@drawable/activity_myinformation_rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameRectangle" />
 
@@ -129,7 +129,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/title_circle"
+            android:background="@drawable/activity_myinformation_titlecircle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -152,7 +152,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/menu_red_rectangle"
+            android:background="@drawable/activity_myinformation_rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profileImage" />
 
@@ -175,7 +175,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="23dp"
-            android:background="@drawable/menu_red_rectangle"
+            android:background="@drawable/activity_myinformation_rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phoneRectangle" />
 
@@ -198,7 +198,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/blue_gradation_ellipse"
+            android:background="@drawable/activity_myinformation_ellipse"
             android:text="스터디 추천"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent"
