@@ -47,7 +47,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="45dp"
-            android:background="@drawable/rectangle"
+            android:background="@drawable/menu_red_rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameRectangle" />
 
@@ -104,7 +104,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/circle"
+            android:background="@drawable/title_circle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -127,7 +127,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="28dp"
-            android:background="@drawable/rectangle"
+            android:background="@drawable/menu_red_rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profileImage" />
 
@@ -150,7 +150,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="40dp"
-            android:background="@drawable/rectangle"
+            android:background="@drawable/menu_red_rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phoneRectangle" />
 
@@ -171,7 +171,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/ellipse"
+            android:background="@drawable/blue_gradation_ellipse"
             android:text="시작하기!"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
