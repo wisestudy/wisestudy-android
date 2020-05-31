@@ -90,10 +90,10 @@ public class MainPageCalendarActivity extends AppCompatActivity  {
 
         ArrayList<String> joinedList = new ArrayList<>();
 
-        joinedGroup.add("°¡ÀÔÇÑ ±×·ì");
+        joinedGroup.add("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×·ï¿½");
 
 
-        joinedList.add("ÇÁ·Î±×¶óÇÇ");
+        joinedList.add("ï¿½ï¿½ï¿½Î±×¶ï¿½ï¿½ï¿½");
         joinedList.add("SCH");
 
         joinedGroupChild.put(joinedGroup.get(0),joinedList);
@@ -103,9 +103,9 @@ public class MainPageCalendarActivity extends AppCompatActivity  {
     }
     private void InitializeData() {
         recyclerDataList = new ArrayList<>();
-        recyclerDataList.add(new RecyclerViewData(R.color.colorAccent,"7ÀÏ","¾È¾ç Ä¿ÇÇºó","¿ÀÈÄ 2½Ã"));
-        recyclerDataList.add(new RecyclerViewData(R.color.colorPrimary,"14ÀÏ","¾È¾ç ½ºÅÍµð·ë","¿ÀÈÄ 1½Ã"));
-        recyclerDataList.add(new RecyclerViewData(R.color.colorPrimaryDark,"21ÀÏ","¹ü°è Ä¿ÇÇºó","¿ÀÈÄ 3½Ã"));
+        recyclerDataList.add(new RecyclerViewData(R.color.colorAccent,"7ï¿½ï¿½","ï¿½È¾ï¿½ Ä¿ï¿½Çºï¿½","ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½"));
+        recyclerDataList.add(new RecyclerViewData(R.color.colorPrimary,"14ï¿½ï¿½","ï¿½È¾ï¿½ ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½"));
+        recyclerDataList.add(new RecyclerViewData(R.color.colorPrimaryDark,"21ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½Çºï¿½","ï¿½ï¿½ï¿½ï¿½ 3ï¿½ï¿½"));
     }
 
     @Override
@@ -145,8 +145,4 @@ public class MainPageCalendarActivity extends AppCompatActivity  {
         }
     }
 
-}
-package com.study.wisestudy.MainPage;
-
-public class MainPageCalendarActivity {
 }
