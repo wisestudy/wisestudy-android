@@ -86,7 +86,7 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/activity_calendarpage_navigationdrawer"
 
-        >
+        tools:ignore="MissingClass">
 
         <ExpandableListView
             android:id="@+id/joinedGroupListId"

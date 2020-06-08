@@ -1,4 +1,4 @@
-package com.study.wisestudy;
+package com.wisestudy;
 
 import android.content.Context;
 

@@ -1,4 +1,4 @@
-package com.study.wisestudy;
+package com.wisestudy;
 
 import org.junit.Test;
 

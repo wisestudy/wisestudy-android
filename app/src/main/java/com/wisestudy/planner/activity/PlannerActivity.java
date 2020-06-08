@@ -1,16 +1,13 @@
-package com.study.wisestudy.MainPage;
+package com.wisestudy.planner.activity;
 
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -19,28 +16,28 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.navigation.NavigationView;
-import com.study.wisestudy.MainPage.RecyclerView.RecyclerViewAdapter;
-import com.study.wisestudy.MainPage.RecyclerView.RecyclerViewData;
-import com.study.wisestudy.R;
+import com.wisestudy.planner.module.recyclerview.RecyclerViewAdapter;
+import com.wisestudy.planner.vo.plannerVO;
+//import com.google.android.material.navigation.NavigationView;
+import com.wisestudy.wisestudy.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainPageCalendarActivity extends AppCompatActivity  {
+public class PlannerActivity extends AppCompatActivity  {
 
-    private ArrayList<RecyclerViewData> recyclerDataList;
+    private ArrayList<plannerVO> recyclerDataList;
     private RecyclerView recyclerView;
     private LinearLayoutManager manager;
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
+//    private NavigationView navigationView;
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
     private ExpandableListView expandableListView;
-    private NavigationDrawerPageExpandListviewAdapter expandListviewAdapter;
+//    private NavigationDrawerPageExpandListviewAdapter expandListviewAdapter;
     private ArrayList<String> joinedGroup = new ArrayList<>();
     private Map<String,ArrayList<String>> joinedGroupChild = new HashMap<>();
 
@@ -50,13 +47,13 @@ public class MainPageCalendarActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendarpage);
+        setContentView(R.layout.activity_planner);
 
         toolbar = findViewById(R.id.toolBarId);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.menu);
+//        getSupportActionBar().setHomeAsUpIndicator(R.drawable.menu);
 
 
         drawerLayout = findViewById(R.id.mainPageId);
@@ -65,8 +62,8 @@ public class MainPageCalendarActivity extends AppCompatActivity  {
         actionBarDrawerToggle.syncState();
 
         expandableListView = findViewById(R.id.joinedGroupListId);
-        navigationView = findViewById(R.id.navigationviewId);
-        navigationHeader = navigationView.getHeaderView(0);
+//        navigationView = findViewById(R.id.navigationviewId);
+//        navigationHeader = navigationView.getHeaderView(0);
         drawerNavigationClose = navigationHeader.findViewById(R.id.navigationviewCloseId);
         drawerNavigationClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,15 +94,15 @@ public class MainPageCalendarActivity extends AppCompatActivity  {
         joinedList.add("SCH");
 
         joinedGroupChild.put(joinedGroup.get(0),joinedList);
-        expandListviewAdapter = new NavigationDrawerPageExpandListviewAdapter(joinedGroup,joinedGroupChild,this);
-        expandableListView.setAdapter(expandListviewAdapter);
+//        expandListviewAdapter = new NavigationDrawerPageExpandListviewAdapter(joinedGroup,joinedGroupChild,this);
+//        expandableListView.setAdapter(expandListviewAdapter);
 
     }
     private void InitializeData() {
         recyclerDataList = new ArrayList<>();
-        recyclerDataList.add(new RecyclerViewData(R.color.colorAccent,"7��","�Ⱦ� Ŀ�Ǻ�","���� 2��"));
-        recyclerDataList.add(new RecyclerViewData(R.color.colorPrimary,"14��","�Ⱦ� ���͵���","���� 1��"));
-        recyclerDataList.add(new RecyclerViewData(R.color.colorPrimaryDark,"21��","���� Ŀ�Ǻ�","���� 3��"));
+        recyclerDataList.add(new plannerVO(R.color.colorAccent,"7��","�Ⱦ� Ŀ�Ǻ�","���� 2��"));
+        recyclerDataList.add(new plannerVO(R.color.colorPrimary,"14��","�Ⱦ� ���͵���","���� 1��"));
+        recyclerDataList.add(new plannerVO(R.color.colorPrimaryDark,"21��","���� Ŀ�Ǻ�","���� 3��"));
     }
 
     @Override

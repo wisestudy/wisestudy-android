@@ -1,20 +1,20 @@
-package com.study.wisestudy.MainPage.RecyclerView;
+package com.wisestudy.planner.vo;
 
 
-public class RecyclerViewData {
+public class plannerVO {
     private int imageIndex;
     private String title;
     private String contents;
     private String date;
 
 
-    public RecyclerViewData(int imageIndex, String title, String contents, String date) {
+    public plannerVO(int imageIndex, String title, String contents, String date) {
         this.imageIndex = imageIndex;
         this.title = title;
         this.contents = contents;
         this.date = date;
     }
-    public RecyclerViewData(String title, String contents, String date){
+    public plannerVO(String title, String contents, String date){
         this.title = title;
         this.contents = contents;
         this.date = date;
