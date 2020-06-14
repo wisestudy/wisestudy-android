@@ -1,5 +1,6 @@
 package com.wisestudy.planner.module.recyclerview;
 
+/*
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,3 +49,4 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
         return recyclerDataList.size();
     }
 }
+*/

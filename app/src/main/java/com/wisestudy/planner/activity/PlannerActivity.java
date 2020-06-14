@@ -13,10 +13,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+/*import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;*/
 
-import com.wisestudy.planner.module.recyclerview.RecyclerViewAdapter;
+/*import com.wisestudy.planner.module.recyclerview.RecyclerViewAdapter;*/
 import com.wisestudy.planner.vo.plannerVO;
 //import com.google.android.material.navigation.NavigationView;
 import com.wisestudy.wisestudy.R;
@@ -27,9 +27,11 @@ import java.util.Map;
 
 public class PlannerActivity extends AppCompatActivity  {
 
-    private ArrayList<plannerVO> recyclerDataList;
+/*    private ArrayList<plannerVO> recyclerDataList;
+*//*
     private RecyclerView recyclerView;
     private LinearLayoutManager manager;
+*//*
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
@@ -74,11 +76,13 @@ public class PlannerActivity extends AppCompatActivity  {
         joinedData();
 
         this.InitializeData();
-        recyclerView = findViewById(R.id.recyclerId);
+        *//*    recyclerView = findViewById(R.id.recyclerId);
+
         recyclerView.setHasFixedSize(true);
         manager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(new RecyclerViewAdapter(recyclerDataList));
+*//*
 
 
     }
@@ -140,6 +144,6 @@ public class PlannerActivity extends AppCompatActivity  {
             default :
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 
 }
