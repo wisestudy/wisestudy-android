@@ -29,7 +29,7 @@ public class LandingActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        handler.postDelayed(run, 2000);
+        handler.postDelayed(run, 2500);
     }
 
     @Override
