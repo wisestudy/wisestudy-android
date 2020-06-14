@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wisestudy.wisestudy">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,7 +24,7 @@
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
-            android:value="EnRKgrRQI8ZTCJiMUqYt7p8NrvU=" />
+            android:value="861c70923d0f32c7b649ebe2fa8fedfd" />
     </application>
 
 </manifest>
