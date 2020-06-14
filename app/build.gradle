@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.study.wisestudy"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -26,4 +26,20 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    // 카카오 로그인
+    implementation group: 'com.kakao.sdk', name: 'usermgmt', version: '1.29.0'
+
+    // 카카오톡
+    implementation group: 'com.kakao.sdk', name: 'kakaotalk', version: '1.29.0'
+
+    // 카카오스토리
+    implementation group: 'com.kakao.sdk', name: 'kakaostory', version: '1.29.0'
+
+    // 카카오링크
+    implementation group: 'com.kakao.sdk', name: 'kakaolink', version: '1.29.0'
+
+    // 카카오내비
+    implementation group: 'com.kakao.sdk', name: 'kakaonavi', version: '1.29.0'
 }
