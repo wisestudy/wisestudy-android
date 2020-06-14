@@ -10,7 +10,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -36,7 +35,7 @@ public class MainPageCalendarActivity extends AppCompatActivity  {
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
+    private NavigationDrawerPageExpandListviewAdapter navigationView;
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
     private ExpandableListView expandableListView;
@@ -145,4 +144,3 @@ public class MainPageCalendarActivity extends AppCompatActivity  {
         }
     }
 
-}

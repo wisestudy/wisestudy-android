@@ -86,4 +86,7 @@ public class NavigationDrawerPageExpandListviewAdapter extends BaseExpandableLis
     public boolean isChildSelectable(int groupPosition, int childPosition) {
         return true;
     }
+
+    public View getHeaderView(int i) {
+    }
 }
