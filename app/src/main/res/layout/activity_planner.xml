@@ -11,7 +11,7 @@
     tools:openDrawer="start"
     >
 
-<!--
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -20,7 +20,7 @@
             android:id="@+id/toolBarId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/calendar_gradient"
+            android:background="@drawable/calendar_toolbar_gradient"
             android:minHeight="?attr/actionBarSize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -99,6 +99,5 @@
             />
 
     </com.google.android.material.navigation.NavigationView>
--->
 
 </androidx.drawerlayout.widget.DrawerLayout>

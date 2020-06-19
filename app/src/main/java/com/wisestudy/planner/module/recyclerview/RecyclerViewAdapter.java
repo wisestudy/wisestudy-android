@@ -1,6 +1,6 @@
 package com.wisestudy.planner.module.recyclerview;
 
-/*
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +29,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        view = inflater.inflate(R.layout.activity_recyclerview,parent,false);
+        view = inflater.inflate(R.layout.activity_planner_recyclerview,parent,false);
         viewHolder = new RecyclerViewHolder(view);
 
         return viewHolder;
@@ -37,7 +37,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
-//        holder.imageView.setImageResource(recyclerDataList.get(position).getImageIndex());
+        holder.imageView.setImageResource(recyclerDataList.get(position).getImageIndex());
         holder.dateView.setText(recyclerDataList.get(position).getDate());
         holder.titleView.setText(recyclerDataList.get(position).getTitle());
         holder.contensView.setText(recyclerDataList.get(position).getContents());
@@ -49,4 +49,4 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
         return recyclerDataList.size();
     }
 }
-*/
+
