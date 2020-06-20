@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.wisestudy.planner.vo.plannerVO;
+import com.wisestudy.planner.vo.PlannerVO;
 import com.wisestudy.wisestudy.R;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
-    private ArrayList<plannerVO> recyclerDataList = null;
-    public RecyclerViewAdapter(ArrayList<plannerVO> dataList){
+    private ArrayList<PlannerVO> recyclerDataList = null;
+    public RecyclerViewAdapter(ArrayList<PlannerVO> dataList){
         recyclerDataList = dataList;
     }
     private RecyclerViewHolder viewHolder;

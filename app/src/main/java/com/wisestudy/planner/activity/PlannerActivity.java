@@ -22,8 +22,8 @@ import androidx.recyclerview.widget.RecyclerView;*/
 /*import com.wisestudy.planner.module.recyclerview.RecyclerViewAdapter;*/
 import com.google.android.material.navigation.NavigationView;
 import com.wisestudy.planner.module.recyclerview.RecyclerViewAdapter;
-import com.wisestudy.planner.vo.JoinedGroupVO;
-import com.wisestudy.planner.vo.plannerVO;
+import com.wisestudy.planner.expandablelist.ExpandableListAdapter;
+import com.wisestudy.planner.vo.PlannerVO;
 //import com.google.android.material.navigation.NavigationView;
 import com.wisestudy.user.activity.UserActivity;
 import com.wisestudy.wisestudy.R;
@@ -34,7 +34,7 @@ import java.util.Map;
 
 public class PlannerActivity extends AppCompatActivity  {
 
-    private ArrayList<plannerVO> recyclerDataList;
+    private ArrayList<PlannerVO> recyclerDataList;
 
     private RecyclerView recyclerView;
     private LinearLayoutManager manager;
@@ -46,9 +46,9 @@ public class PlannerActivity extends AppCompatActivity  {
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
     private ExpandableListView expandableListView;
-    private JoinedGroupVO expandListviewAdapter;
-    private ArrayList<String> joinedGroup = new ArrayList<>();
-    private Map<String,ArrayList<String>> joinedGroupChild = new HashMap<>();
+    private ExpandableListAdapter expandableListviewAdapter;
+    private ArrayList<String> expandableListJoinedGroup = new ArrayList<>();
+    private Map<String,ArrayList<String>> expandableListJoinedGroupChild = new HashMap<>();
 
     private View navigationHeader;
     private ImageButton drawerNavigationClose;
@@ -98,22 +98,22 @@ public class PlannerActivity extends AppCompatActivity  {
 
         ArrayList<String> joinedList = new ArrayList<>();
 
-        joinedGroup.add("가입한 그룹");
+        expandableListJoinedGroup.add("가입한 그룹");
 
 
         joinedList.add("프로그라피");
         joinedList.add("SCH");
 
-        joinedGroupChild.put(joinedGroup.get(0),joinedList);
-        expandListviewAdapter = new JoinedGroupVO(joinedGroup,joinedGroupChild,this);
-        expandableListView.setAdapter(expandListviewAdapter);
+        expandableListJoinedGroupChild.put(expandableListJoinedGroup.get(0),joinedList);
+        expandableListviewAdapter = new ExpandableListAdapter(expandableListJoinedGroup,expandableListJoinedGroupChild,this);
+        expandableListView.setAdapter(expandableListviewAdapter);
 
     }
     private void InitializeData() {
         recyclerDataList = new ArrayList<>();
-        recyclerDataList.add(new plannerVO(R.color.colorAccent,"7일","안양 커피빈","오후 2시"));
-        recyclerDataList.add(new plannerVO(R.color.colorPrimary,"14일","안양 스터디룸","오후 1시"));
-        recyclerDataList.add(new plannerVO(R.color.colorPrimaryDark,"21일","범계 커피빈","오후 3시"));
+        recyclerDataList.add(new PlannerVO(R.color.colorAccent,"7일","안양 커피빈","오후 2시"));
+        recyclerDataList.add(new PlannerVO(R.color.colorPrimary,"14일","안양 스터디룸","오후 1시"));
+        recyclerDataList.add(new PlannerVO(R.color.colorPrimaryDark,"21일","범계 커피빈","오후 3시"));
     }
 
     @Override
