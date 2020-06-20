@@ -42,7 +42,7 @@ public class PlannerActivity extends AppCompatActivity  {
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
     private ExpandableListView expandableListView;
-    private ExpandableListAdapter expandableListviewAdapter;
+    private ExpandableListAdapter expandableListAdapter;
     private ArrayList<String> expandableListJoinedGroup = new ArrayList<>();
     private Map<String,ArrayList<String>> expandableListJoinedGroupChild = new HashMap<>();
 
@@ -101,8 +101,8 @@ public class PlannerActivity extends AppCompatActivity  {
         joinedList.add("SCH");
 
         expandableListJoinedGroupChild.put(expandableListJoinedGroup.get(0),joinedList);
-        expandableListviewAdapter = new ExpandableListAdapter(expandableListJoinedGroup,expandableListJoinedGroupChild,this);
-        expandableListView.setAdapter(expandableListviewAdapter);
+        expandableListAdapter = new ExpandableListAdapter(expandableListJoinedGroup,expandableListJoinedGroupChild,this);
+        expandableListView.setAdapter(expandableListAdapter);
 
     }
     private void InitializeData() {
