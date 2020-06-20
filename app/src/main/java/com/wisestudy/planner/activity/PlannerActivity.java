@@ -16,15 +16,11 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-/*import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;*/
 
-/*import com.wisestudy.planner.module.recyclerview.RecyclerViewAdapter;*/
-import com.google.android.material.navigation.NavigationView;
 import com.wisestudy.planner.module.recyclerview.RecyclerViewAdapter;
-import com.wisestudy.planner.expandablelist.ExpandableListAdapter;
+import com.google.android.material.navigation.NavigationView;
+import com.wisestudy.planner.module.expandablelist.ExpandableListAdapter;
 import com.wisestudy.planner.vo.PlannerVO;
-//import com.google.android.material.navigation.NavigationView;
 import com.wisestudy.user.activity.UserActivity;
 import com.wisestudy.wisestudy.R;
 
