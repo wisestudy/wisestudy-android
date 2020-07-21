@@ -13,16 +13,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
-    private ArrayList<PlannerVO> recyclerDataList = null;
-    public RecyclerViewAdapter(ArrayList<PlannerVO> dataList){
-        recyclerDataList = dataList;
-    }
+    private List<PlannerVO> recyclerDataList = null;
     private RecyclerViewHolder viewHolder;
     private View view;
     private Context context;
     private LayoutInflater inflater;
+
+    public RecyclerViewAdapter(List<PlannerVO> dataList){
+        recyclerDataList = dataList;
+    }
 
     @NonNull
     @Override
