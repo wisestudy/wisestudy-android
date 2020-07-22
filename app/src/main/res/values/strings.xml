@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">WiseStudy</string>
+
+
+
+    <string name="group_management">관리</string>
+    <string name="group_magement_registertodo_button">일정 등록하기</string>
+    <string name="group_magement_modify_button">그룹 수정하기</string>
+
 </resources>
