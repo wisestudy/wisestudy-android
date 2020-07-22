@@ -33,17 +33,16 @@
     </com.google.android.material.appbar.MaterialToolbar>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/manageMentRegisterToDo"
         style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:id="@+id/manageMentRegisterToDo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:backgroundTint="@color/colorPrimary"
         android:background="@drawable/button_click_effect"
         android:gravity="left"
-        android:text="@string/group_magement_registertodo_button"
+        android:text="@string/group_management_registertodo_button"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,14 +51,34 @@
         app:layout_constraintTop_toBottomOf="@+id/manageMentToolbar" />
 
     <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:id="@+id/manageMentModifyGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimary"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="@drawable/button_click_effect"
         android:gravity="left"
-        android:text="@string/group_magement_modify_button"
+        android:text="@string/group_management_modify_button"
         android:textColor="@color/black"
         android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manageMentRegisterToDo" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:id="@+id/manageCurrentApply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity = "left"
+        android:text="@string/group_management_currentapply_button"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:background="@drawable/button_click_effect"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -67,7 +86,45 @@
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manageMentRegisterToDo" />
+        app:layout_constraintTop_toBottomOf="@+id/manageMentModifyGroup" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:id="@+id/managementDeleteGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="@string/group_management_delete_button"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:background="@drawable/button_click_effect"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manageCurrentApply" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/managementAdmin"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/group_management_admin"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:gravity="left"
+        android:background="@drawable/button_click_effect"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/managementDeleteGroup" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
