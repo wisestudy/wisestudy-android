@@ -13,7 +13,9 @@
         <activity android:name="com.wisestudy.landing.activity.LandingActivity">
         </activity>
         <activity android:name="com.wisestudy.user.activity.UserCreateActivity"></activity>
-        <activity android:name="com.wisestudy.login.activity.LoginActivity"></activity>
+        <activity android:name="com.wisestudy.login.activity.LoginActivity">
+
+        </activity>
         <activity android:name="com.wisestudy.planner.activity.PlannerActivity"></activity>
 
         <activity android:name="com.wisestudy.groupleader.activity.GroupManagement">
