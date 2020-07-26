@@ -22,7 +22,7 @@ public class UiHelper  {
     }
 
     /**
-      앱바를 사용하면 아래에 그림자가 생기게 되는데 그런 그림자 제거를 위해 만듬
+        앱바 위에 보면 상태 표시줄이 있는데 상태표시줄을 없애는 코드
      **/
     public static void hideWindow(AppCompatActivity activity){
         activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,

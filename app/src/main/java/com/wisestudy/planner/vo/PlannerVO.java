@@ -1,20 +1,20 @@
 package com.wisestudy.planner.vo;
 
 
-public class plannerVO {
+public class PlannerVO {
     private int imageIndex;
     private String title;
     private String contents;
     private String date;
 
 
-    public plannerVO(int imageIndex, String title, String contents, String date) {
+    public PlannerVO(int imageIndex, String title, String contents, String date) {
         this.imageIndex = imageIndex;
         this.title = title;
         this.contents = contents;
         this.date = date;
     }
-    public plannerVO(String title, String contents, String date){
+    public PlannerVO(String title, String contents, String date){
         this.title = title;
         this.contents = contents;
         this.date = date;
