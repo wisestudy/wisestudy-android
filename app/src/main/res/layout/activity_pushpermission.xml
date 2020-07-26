@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/pushPermissionToMainId"
+        android:layout_width="64dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="3dp"
+        android:background="#00ff0000"
+        android:text="메인화면"
+        android:textColor="#707070"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/pushPermissionLayoutId"
+        app:layout_constraintEnd_toStartOf="@+id/pushPermissionTextId"
+        app:layout_constraintStart_toEndOf="@+id/pushPermissionToMainViewId"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <Button
+        android:id="@+id/okId"
+        android:layout_width="32dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginBottom="3dp"
+        android:background="#00ff0000"
+        android:text="확인"
+        android:textColor="#707070"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/pushPermissionLayoutId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pushPermissionTextId"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/pushPermissionToMainViewId"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/back_arrow"
+
+        app:layout_constraintBottom_toTopOf="@+id/pushPermissionLayoutId"
+        app:layout_constraintEnd_toStartOf="@+id/pushPermissionToMainId"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pushPermissionTextId"
+        android:layout_width="86dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="54dp"
+        android:text="푸쉬권한"
+        android:textColor="#191919"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/pushPermissionLayoutId"
+        app:layout_constraintEnd_toStartOf="@+id/okId"
+        app:layout_constraintStart_toEndOf="@+id/pushPermissionToMainId"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pushPermissionLayoutId"
+        android:layout_width="415dp"
+        android:layout_height="643dp"
+        android:background="#f1f1f1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pushPermissionTextId">
+
+
+        <TextView
+            android:id="@+id/alarmFunctionTextId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="250dp"
+            android:layout_marginRight="250dp"
+            android:text="알림 기능"
+            android:textColor="#191919"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toTopOf="@+id/studyAlarmPermissionTextId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/studyAlarmPermissionTextId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:text="스터디 알람 권한"
+            android:textColor="#707070"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toTopOf="@+id/locationAlarmPermissionTextId"
+            app:layout_constraintEnd_toStartOf="@+id/studyAlarmSwitchId"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alarmFunctionTextId" />
+
+        <TextView
+            android:id="@+id/locationAlarmPermissionTextId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginBottom="450dp"
+            android:text="자신의 위치 알람 권한"
+            android:textColor="#707070"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/locationAlarmSwitchId"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/studyAlarmPermissionTextId" />
+
+        <Switch
+            android:id="@+id/studyAlarmSwitchId"
+            android:layout_width="92dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="106dp"
+            android:layout_marginEnd="21dp"
+            android:layout_marginRight="21dp"
+            android:switchMinWidth="92dp"
+            android:thumb="@drawable/switch_thumb_selector"
+            android:track="@drawable/switch_track_selector"
+            app:layout_constraintBottom_toTopOf="@+id/locationAlarmSwitchId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/studyAlarmPermissionTextId"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Switch
+            android:id="@+id/locationAlarmSwitchId"
+            android:layout_width="92dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="21dp"
+            android:layout_marginRight="21dp"
+            android:layout_marginBottom="448dp"
+            android:switchMinWidth="92dp"
+            android:thumb="@drawable/switch_thumb_selector"
+            android:track="@drawable/switch_track_selector"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/locationAlarmPermissionTextId"
+            app:layout_constraintTop_toBottomOf="@+id/studyAlarmSwitchId" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

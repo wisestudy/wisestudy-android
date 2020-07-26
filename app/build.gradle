@@ -43,4 +43,6 @@ dependencies {
     // 카카오내비
     implementation group: 'com.kakao.sdk', name: 'kakaonavi', version: '1.29.0'
     implementation 'com.android.support:design:28.0.0'
+
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
 }
