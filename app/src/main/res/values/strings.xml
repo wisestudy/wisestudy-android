@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">WiseStudy</string>
+
+
+
+    <string name="group_management">관리</string>
+    <string name="group_management_registertodo_button"> 일정 등록하기 </string>
+    <string name="group_management_modify_button"> 그룹 수정하기 </string>
+    <string name="group_management_currentapply_button"> 신청 현황</string>
+    <string name="group_management_delete_button">그룹 삭제하기</string>
+    <string name="group_management_admin">운영진 관리</string>
+
 </resources>

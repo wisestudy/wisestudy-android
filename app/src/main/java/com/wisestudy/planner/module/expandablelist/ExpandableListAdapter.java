@@ -9,11 +9,12 @@ import android.widget.TextView;
 
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import com.wisestudy.wisestudy.R;
 
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
-    private ArrayList<String> expandableListJoinedGroup;
+    private List<String> expandableListJoinedGroup;
     private Map<String,ArrayList<String>> expandableListJoinedGroupChild;
     private Context expandableListContext;
     private String expandableListJoinedGroupTitle;
