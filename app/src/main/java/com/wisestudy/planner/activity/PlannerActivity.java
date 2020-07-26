@@ -26,11 +26,12 @@ import com.wisestudy.wisestudy.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class PlannerActivity extends AppCompatActivity  {
 
-    private ArrayList<PlannerVO> recyclerDataList;
+    private List<PlannerVO> recyclerDataList;
 
     private RecyclerView recyclerView;
     private LinearLayoutManager manager;
@@ -43,7 +44,7 @@ public class PlannerActivity extends AppCompatActivity  {
 
     private ExpandableListView expandableListView;
     private ExpandableListAdapter expandableListAdapter;
-    private ArrayList<String> expandableListJoinedGroup = new ArrayList<>();
+    private List<String> expandableListJoinedGroup = new ArrayList<>();
     private Map<String,ArrayList<String>> expandableListJoinedGroupChild = new HashMap<>();
 
     private View navigationHeader;
@@ -54,7 +55,7 @@ public class PlannerActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planner);
 
-        toolbar = findViewById(R.id.toolBarId);
+        toolbar = findViewById(R.id.plannerToolBarId);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -79,7 +80,7 @@ public class PlannerActivity extends AppCompatActivity  {
         joinedData();
 
         this.InitializeData();
-            recyclerView = findViewById(R.id.recyclerId);
+        recyclerView = findViewById(R.id.plannerRecyclerId);
 
         recyclerView.setHasFixedSize(true);
         manager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
@@ -92,7 +93,7 @@ public class PlannerActivity extends AppCompatActivity  {
 
     private void joinedData(){
 
-        ArrayList<String> joinedList = new ArrayList<>();
+        List<String> joinedList = new ArrayList<>();
 
         expandableListJoinedGroup.add("가입한 그룹");
 
@@ -100,8 +101,8 @@ public class PlannerActivity extends AppCompatActivity  {
         joinedList.add("프로그라피");
         joinedList.add("SCH");
 
-        expandableListJoinedGroupChild.put(expandableListJoinedGroup.get(0),joinedList);
-        expandableListAdapter = new ExpandableListAdapter(expandableListJoinedGroup,expandableListJoinedGroupChild,this);
+        expandableListJoinedGroupChild.put(expandableListJoinedGroup.get(0), (ArrayList<String>) joinedList);
+        expandableListAdapter = new ExpandableListAdapter((ArrayList<String>) expandableListJoinedGroup,expandableListJoinedGroupChild,this);
         expandableListView.setAdapter(expandableListAdapter);
 
     }
