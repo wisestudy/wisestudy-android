@@ -8,17 +8,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/mAppTheme"
         android:name="com.wisestudy.login.activity.LoginInit">
         <activity android:name="com.wisestudy.landing.activity.LandingActivity">
+        </activity>
+        <activity android:name="com.wisestudy.user.activity.UserCreateActivity"></activity>
+        <activity android:name="com.wisestudy.login.activity.LoginActivity"></activity>
+        <activity android:name="com.wisestudy.planner.activity.PlannerActivity"></activity>
+
+        <activity android:name="com.wisestudy.groupleader.activity.GroupManagement">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.wisestudy.user.activity.UserCreateActivity"></activity>
-        <activity android:name="com.wisestudy.login.activity.LoginActivity"></activity>
-        <activity android:name="com.wisestudy.planner.activity.PlannerActivity"></activity>
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
