@@ -43,7 +43,7 @@
         android:background="@drawable/ediit_text_round"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="안드로이드"
+        android:hint="안드로이드"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/studySearchToolBar" />

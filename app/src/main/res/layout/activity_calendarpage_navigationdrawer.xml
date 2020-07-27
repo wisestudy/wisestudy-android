@@ -7,12 +7,12 @@
     android:layout_height="match_parent"
     >
 
-<!--    <LinearLayout
+    <LinearLayout
         android:id="@+id/navigationviewHeaderId"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/calendar_gradient"
+        android:background="@drawable/calendar_toolbar_gradient"
         android:gravity="right"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,6 +39,6 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/navigationviewHeaderId" />-->
+            app:layout_constraintTop_toBottomOf="@id/navigationviewHeaderId" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

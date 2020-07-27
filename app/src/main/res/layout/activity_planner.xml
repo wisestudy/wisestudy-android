@@ -11,16 +11,16 @@
     tools:openDrawer="start"
     >
 
-<!--
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolBarId"
+            android:id="@+id/plannerToolBarId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/calendar_gradient"
+            android:background="@drawable/calendar_toolbar_gradient"
             android:minHeight="?attr/actionBarSize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +65,7 @@
         </TextView>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerId"
+            android:id="@+id/plannerRecyclerId"
             android:layout_width="315dp"
             android:layout_height="250dp"
             android:layout_marginTop="10dp"
@@ -99,6 +99,5 @@
             />
 
     </com.google.android.material.navigation.NavigationView>
--->
 
 </androidx.drawerlayout.widget.DrawerLayout>

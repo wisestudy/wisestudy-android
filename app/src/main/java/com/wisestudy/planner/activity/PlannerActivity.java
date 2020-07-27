@@ -1,5 +1,6 @@
 package com.wisestudy.planner.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,35 +14,38 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-/*import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;*/
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-/*import com.wisestudy.planner.module.recyclerview.RecyclerViewAdapter;*/
-import com.wisestudy.planner.vo.plannerVO;
-//import com.google.android.material.navigation.NavigationView;
+import com.wisestudy.planner.module.recyclerview.RecyclerViewAdapter;
+import com.google.android.material.navigation.NavigationView;
+import com.wisestudy.planner.module.expandablelist.ExpandableListAdapter;
+import com.wisestudy.planner.vo.PlannerVO;
+import com.wisestudy.user.activity.UserActivity;
 import com.wisestudy.wisestudy.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class PlannerActivity extends AppCompatActivity  {
 
-/*    private ArrayList<plannerVO> recyclerDataList;
-*//*
+    private List<PlannerVO> recyclerDataList;
+
     private RecyclerView recyclerView;
     private LinearLayoutManager manager;
-*//*
+
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
-//    private NavigationView navigationView;
+    private NavigationView navigationView;
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
     private ExpandableListView expandableListView;
-//    private NavigationDrawerPageExpandListviewAdapter expandListviewAdapter;
-    private ArrayList<String> joinedGroup = new ArrayList<>();
-    private Map<String,ArrayList<String>> joinedGroupChild = new HashMap<>();
+    private ExpandableListAdapter expandableListAdapter;
+    private List<String> expandableListJoinedGroup = new ArrayList<>();
+    private Map<String,ArrayList<String>> expandableListJoinedGroupChild = new HashMap<>();
 
     private View navigationHeader;
     private ImageButton drawerNavigationClose;
@@ -51,11 +55,11 @@ public class PlannerActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planner);
 
-        toolbar = findViewById(R.id.toolBarId);
+        toolbar = findViewById(R.id.plannerToolBarId);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setHomeAsUpIndicator(R.drawable.menu);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.calendar_toolbar_menu);
 
 
         drawerLayout = findViewById(R.id.mainPageId);
@@ -64,8 +68,8 @@ public class PlannerActivity extends AppCompatActivity  {
         actionBarDrawerToggle.syncState();
 
         expandableListView = findViewById(R.id.joinedGroupListId);
-//        navigationView = findViewById(R.id.navigationviewId);
-//        navigationHeader = navigationView.getHeaderView(0);
+        navigationView = findViewById(R.id.navigationviewId);
+        navigationHeader = navigationView.getHeaderView(0);
         drawerNavigationClose = navigationHeader.findViewById(R.id.navigationviewCloseId);
         drawerNavigationClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,37 +80,37 @@ public class PlannerActivity extends AppCompatActivity  {
         joinedData();
 
         this.InitializeData();
-        *//*    recyclerView = findViewById(R.id.recyclerId);
+        recyclerView = findViewById(R.id.plannerRecyclerId);
 
         recyclerView.setHasFixedSize(true);
         manager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(new RecyclerViewAdapter(recyclerDataList));
-*//*
+
 
 
     }
 
     private void joinedData(){
 
-        ArrayList<String> joinedList = new ArrayList<>();
+        List<String> joinedList = new ArrayList<>();
 
-        joinedGroup.add("������ �׷�");
+        expandableListJoinedGroup.add("가입한 그룹");
 
 
-        joinedList.add("���α׶���");
+        joinedList.add("프로그라피");
         joinedList.add("SCH");
 
-        joinedGroupChild.put(joinedGroup.get(0),joinedList);
-//        expandListviewAdapter = new NavigationDrawerPageExpandListviewAdapter(joinedGroup,joinedGroupChild,this);
-//        expandableListView.setAdapter(expandListviewAdapter);
+        expandableListJoinedGroupChild.put(expandableListJoinedGroup.get(0), (ArrayList<String>) joinedList);
+        expandableListAdapter = new ExpandableListAdapter((ArrayList<String>) expandableListJoinedGroup,expandableListJoinedGroupChild,this);
+        expandableListView.setAdapter(expandableListAdapter);
 
     }
     private void InitializeData() {
         recyclerDataList = new ArrayList<>();
-        recyclerDataList.add(new plannerVO(R.color.colorAccent,"7��","�Ⱦ� Ŀ�Ǻ�","���� 2��"));
-        recyclerDataList.add(new plannerVO(R.color.colorPrimary,"14��","�Ⱦ� ���͵���","���� 1��"));
-        recyclerDataList.add(new plannerVO(R.color.colorPrimaryDark,"21��","���� Ŀ�Ǻ�","���� 3��"));
+        recyclerDataList.add(new PlannerVO(R.color.colorAccent,"7일","안양 커피빈","오후 2시"));
+        recyclerDataList.add(new PlannerVO(R.color.colorPrimary,"14일","안양 스터디룸","오후 1시"));
+        recyclerDataList.add(new PlannerVO(R.color.colorPrimaryDark,"21일","범계 커피빈","오후 3시"));
     }
 
     @Override
@@ -133,7 +137,8 @@ public class PlannerActivity extends AppCompatActivity  {
 
         switch(item.getItemId()){
             case R.id.appbarProfile :
-                //ModifyProfile Intent
+                Intent profileIntent = new Intent(getApplication(), UserActivity.class);
+                startActivity(profileIntent);
                 return true;
             case R.id.appbarSearchId :
                 //SearchActivity Intent
@@ -144,6 +149,6 @@ public class PlannerActivity extends AppCompatActivity  {
             default :
                 return super.onOptionsItemSelected(item);
         }
-    }*/
+    }
 
 }
