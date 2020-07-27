@@ -23,19 +23,17 @@ import me.relex.circleindicator.CircleIndicator;
 public class NonGruopActivity extends AppCompatActivity {
 
     private ArrayList<Integer> imageList;
-    private static final int DP=24;
+    private ViewPager viewPager;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_non_group_member);
 
         this.initializeData();
-        ViewPager viewPager = findViewById(R.id.viewPager);
+        viewPager=findViewById(R.id.viewPager);
         viewPager.setClipToPadding(false);
-        float density = getResources().getDisplayMetrics().density;
-        int margin = (int) (DP * density);
-        viewPager.setPadding(margin, 0, margin, 0);
-        viewPager.setPageMargin(margin/2);
+
 
         viewPager.setAdapter(new ViewPagerAdapter(this, imageList));
         CircleIndicator indicator = (CircleIndicator) findViewById(R.id.non_group_indicator);
