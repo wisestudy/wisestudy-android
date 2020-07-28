@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="메모 세부사항"
+            android:text="@string/memo_detail_title"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/memoDetailToolbar">
 
         <fragment
-            android:id="@+id/memoPlaceMap"
+            android:id="@+id/memoDetailPlaceMap"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="410dp"
             android:layout_height="350dp"
@@ -52,7 +52,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/memoTitle"
+            android:id="@+id/memoDetailGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:lineSpacingExtra="8sp"
@@ -62,12 +62,12 @@
             app:layout_constraintHorizontal_bias="0.194"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/memoPlaceMap"
+            app:layout_constraintTop_toBottomOf="@+id/memoDetailPlaceMap"
             app:layout_constraintVertical_bias="0.078"
             tools:text="프로그래머스 스터디" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/memoDetailGroupDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:lineSpacingExtra="5sp"
@@ -77,11 +77,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.127"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/memoTitle"
+            app:layout_constraintTop_toBottomOf="@+id/memoDetailGroup"
             app:layout_constraintVertical_bias="0.13"
             tools:text="2020/05/06" />
 
         <TextView
+            android:id="@+id/memoDetailGroupLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:lineSpacingExtra="5sp"
@@ -91,7 +92,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.189"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/memoDetailGroupDate"
             app:layout_constraintVertical_bias="0.16"
             tools:text="경기도 안양 호계동 스타벅스" />
 

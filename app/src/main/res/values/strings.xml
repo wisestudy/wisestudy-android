@@ -9,5 +9,13 @@
     <string name="group_management_currentapply_button"> 신청 현황</string>
     <string name="group_management_delete_button">그룹 삭제하기</string>
     <string name="group_management_admin">운영진 관리</string>
-
+    <string name="push_permission_ok">확인</string>
+    <string name="push_permission_title">푸쉬 권한</string>
+    <string name="push_permission_function">알림 기능</string>
+    <string name="push_permission_studynotification">스터디 알림 권한</string>
+    <string name="push_permission_lacationnotification">자신의 위치 알림 권한</string>
+    <string name="memo_detail_title">메모 세부사항</string>
+    <string name="group_member_detailscreen_leave">탈퇴하다</string>
+    <string name="group_member_detailscreen_title">상세화면</string>
+    <string name="group_member_detailscreen_locationcheck">스터디원 위치확인</string>
 </resources>

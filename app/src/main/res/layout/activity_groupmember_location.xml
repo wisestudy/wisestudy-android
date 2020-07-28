@@ -3,46 +3,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/groupDetailToolbar"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/groupMemberLocationToolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/calendar_toolbar_gradient"
-        android:minHeight="?attr/actionBarSize"
-
-
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
         <TextView
-
-            android:layout_width="290dp"
+            android:id="@+id/groupMemberLocationTitle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="그룹 이름"
-            android:textSize="20dp"
-            android:textColor="#ffffff"
-            android:gravity="center"
-            android:layout_marginLeft="60dp"
-            />
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+    </com.google.android.material.appbar.MaterialToolbar>
 
-    </androidx.appcompat.widget.Toolbar>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/memoPlaceLayout"
+        android:id="@+id/groupMemberLocationMapLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/calendar_round"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/groupDetailToolbar">
+        app:layout_constraintTop_toBottomOf="@+id/groupMemberLocationToolbar">
 
         <fragment
-            android:id="@+id/memoPlaceMap"
+            android:id="@+id/groupMemberLocationMap"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="310dp"
             android:layout_height="297dp"
@@ -57,16 +55,15 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerId"
+        android:id="@+id/groupMemberLocationRecyclerview"
         android:layout_width="310dp"
         android:layout_height="300dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/memoPlaceLayout"
+        app:layout_constraintTop_toBottomOf="@+id/groupMemberLocationMapLayout"
         app:layout_constraintVertical_bias="0.0">
 
     </androidx.recyclerview.widget.RecyclerView>
