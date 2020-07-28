@@ -13,8 +13,8 @@ import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
 
 public class GroupMemberActivity extends AppCompatActivity {
-    private ViewPager GroupMemberViewPager;
-    private TabLayout GroupMemberTabDot;
+    private ViewPager groupMemberViewPager;
+    private TabLayout groupMemberTabDot;
     private TextView groupMemberGroupName;
     private TextView groupMemberGroupLeader;
     private TextView groupMemberCategory;
@@ -27,8 +27,8 @@ public class GroupMemberActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_groupmember_detailscreen);
 
-        GroupMemberViewPager = findViewById(R.id.groupMemberDetailScreenImage);
-        GroupMemberTabDot = findViewById(R.id.groupMemberDetailScreenTabDots);
+        groupMemberViewPager = findViewById(R.id.groupMemberDetailScreenImage);
+        groupMemberTabDot = findViewById(R.id.groupMemberDetailScreenTabDots);
         UiHelper.toolBarInitialize(this, findViewById(R.id.groupMemberDetailScreenTitle));
         UiHelper.hideWindow(this);
     }
