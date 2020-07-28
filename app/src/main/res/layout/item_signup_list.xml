@@ -26,7 +26,7 @@
         android:layout_marginStart="180dp"
         android:layout_marginLeft="180dp"
         android:layout_marginTop="10dp"
-        android:text="이름"
+        android:text="@string/activity_user_name"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +37,7 @@
         android:layout_marginStart="180dp"
         android:layout_marginLeft="180dp"
         android:layout_marginTop="5dp"
-        android:text="나이"
+        android:text="@string/activity_user_age"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/name_view" />
 
@@ -48,7 +48,7 @@
         android:layout_marginStart="180dp"
         android:layout_marginLeft="180dp"
         android:layout_marginTop="5dp"
-        android:text="전화번호"
+        android:text="@string/activity_user_phone"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/age_view" />
 
@@ -59,7 +59,7 @@
         android:layout_marginStart="180dp"
         android:layout_marginLeft="180dp"
         android:layout_marginTop="5dp"
-        android:text="관심분야"
+        android:text="@string/activity_user_interest"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/phone_number_view" />
 

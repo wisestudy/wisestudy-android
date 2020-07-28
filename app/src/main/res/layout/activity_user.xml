@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="프로필"
+        android:text="@string/activity_user_title"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +35,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:background="#00FF0000"
-        android:text="수정"
+        android:text="@string/activity_user_modified_btn"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -60,7 +60,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:hint="전화번호"
+            android:hint="@string/activity_user_phone"
             android:textSize="10sp"
             app:layout_constraintStart_toEndOf="@+id/phoneRectangle"
             app:layout_constraintTop_toBottomOf="@+id/nameView" />
@@ -140,7 +140,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="프로필 이미지"
+            android:text="@string/activity_user_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
@@ -163,7 +163,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:hint="이름"
+            android:hint="@string/activity_user_name"
             android:textSize="10sp"
             app:layout_constraintStart_toEndOf="@+id/nameRectangle"
             app:layout_constraintTop_toBottomOf="@+id/profileImage" />
@@ -186,7 +186,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:hint="분야"
+            android:hint="@string/activity_user_department"
             android:textSize="10sp"
             app:layout_constraintStart_toEndOf="@+id/departmentRectangle"
             app:layout_constraintTop_toBottomOf="@+id/phoneView" />
@@ -199,7 +199,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/activity_myinformation_ellipse"
-            android:text="스터디 추천"
+            android:text="@string/activity_user_recommend"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/departmentLine" />
@@ -211,7 +211,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
-            android:text="속한 스터디 그룹"
+            android:text="@string/activity_user_join_study"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameLine" />
 
@@ -222,7 +222,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
-            android:text="관심있는 분야"
+            android:text="@string/activity_user_interest_department"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phoneLine" />
 
@@ -256,7 +256,7 @@
         android:layout_height="25dp"
         android:layout_marginTop="23dp"
         android:background="#00ff0000"
-        android:text="메인화면"
+        android:text="@string/activity_main_view_btn"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/mainRectangle"
         app:layout_constraintTop_toTopOf="parent" />
