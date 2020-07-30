@@ -15,7 +15,7 @@ import com.wisestudy.wisestudy.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySearchRecyclerViewAdapter.ViewHolder> {
+public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<com.wisestudy.nongroup.activity.module.recyclerview.ViewHolder> {
 
     private List<StudySearchVO> studyVO;
     private LayoutInflater layoutInflater;
@@ -35,9 +35,9 @@ public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySe
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.textName.setText(studyVO.get(position).getName());
-        holder.textField.setText(studyVO.get(position).getField());
-        holder.textNumber.setText(Integer.toString(studyVO.get(position).getNumber()));
+        holder.getTextName().setText(studyVO.get(position).getName());
+        holder.getTextField().setText(studyVO.get(position).getField());
+        holder.getTextNumber().setText(Integer.toString(studyVO.get(position).getNumber()));
     }
 
     @Override
@@ -45,17 +45,5 @@ public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySe
         return studyVO.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        private TextView textName;
-        private TextView textField;
-        private TextView textNumber;
-        public ViewHolder(View itemView) {
-            super(itemView);
-            textName=itemView.findViewById(R.id.study_name_text);
-            textField=itemView.findViewById(R.id.field_text);
-            textNumber=itemView.findViewById(R.id.number_text);
-        }
-    }
 }
 
