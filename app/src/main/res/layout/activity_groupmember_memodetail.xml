@@ -29,72 +29,61 @@
             android:textStyle="bold" />
     </com.google.android.material.appbar.MaterialToolbar>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/memoDetailLayout"
-        android:layout_width="415dp"
-        android:layout_height="643dp"
-        android:background="#f1f1f1"
+
+    <fragment
+        android:id="@+id/memoDetailPlaceMap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="410dp"
+        android:layout_height="370dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/memoDetailToolbar"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/memoDetailGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="8sp"
+        android:textColor="#191919"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/memoDetailPlaceMap"
+        app:layout_constraintVertical_bias="0.078"
+        tools:text="프로그래머스 스터디" />
+    <TextView
+        android:id="@+id/memoDetailGroupDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="5sp"
+        android:textColor="#707070"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/memoDetailToolbar">
+        app:layout_constraintTop_toBottomOf="@+id/memoDetailGroup"
+        app:layout_constraintVertical_bias="0.13"
+        tools:text="2020/05/06" />
 
-        <fragment
-            android:id="@+id/memoDetailPlaceMap"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="410dp"
-            android:layout_height="350dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/memoDetailLayout"
-            tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/memoDetailGroupLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="5sp"
+        android:textColor="#707070"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/memoDetailGroupDate"
+        app:layout_constraintVertical_bias="0.16"
+        tools:text="경기도 안양 호계동 스타벅스" />
 
-        <TextView
-            android:id="@+id/memoDetailGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:lineSpacingExtra="8sp"
-            android:textColor="#191919"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.194"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/memoDetailPlaceMap"
-            app:layout_constraintVertical_bias="0.078"
-            tools:text="프로그래머스 스터디" />
-
-        <TextView
-            android:id="@+id/memoDetailGroupDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:lineSpacingExtra="5sp"
-            android:textColor="#707070"
-            android:textSize="17sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.127"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/memoDetailGroup"
-            app:layout_constraintVertical_bias="0.13"
-            tools:text="2020/05/06" />
-
-        <TextView
-            android:id="@+id/memoDetailGroupLocation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:lineSpacingExtra="5sp"
-            android:textColor="#707070"
-            android:textSize="17sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.189"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/memoDetailGroupDate"
-            app:layout_constraintVertical_bias="0.16"
-            tools:text="경기도 안양 호계동 스타벅스" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
