@@ -1,6 +1,5 @@
 package com.wisestudy.nongroup.activity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -10,9 +9,15 @@ import android.view.MenuItem;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.wisestudy.planner.viewPager.ViewPagerAdapter;
+import com.google.android.material.tabs.TabLayout;
+
+import com.wisestudy.nongroup.activity.viewPager.FirstFragment;
+import com.wisestudy.nongroup.activity.viewPager.SecondFragment;
+import com.wisestudy.nongroup.activity.viewPager.ThirdFragment;
+import com.wisestudy.nongroup.activity.viewPager.ViewPagerAdapter;
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
 
@@ -24,30 +29,23 @@ public class NonGruopActivity extends AppCompatActivity {
 
     private ArrayList<Integer> imageList;
     private ViewPager viewPager;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_non_group_member);
 
-        this.initializeData();
         viewPager=findViewById(R.id.viewPager);
-        viewPager.setClipToPadding(false);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPager.setAdapter(viewPagerAdapter);
 
-
-        viewPager.setAdapter(new ViewPagerAdapter(this, imageList));
         CircleIndicator indicator = (CircleIndicator) findViewById(R.id.non_group_indicator);
         indicator.setViewPager(viewPager);
+
         UiHelper.toolBarInitialize(this, findViewById(R.id.nonGruopToolbar));
         UiHelper.hideWindow(this);
     }
 
-    private void initializeData() {
-        imageList = new ArrayList();
-        imageList.add(R.drawable.kakao_default_profile_image);
-        imageList.add(R.drawable.kakao_default_profile_image);
-        imageList.add(R.drawable.kakao_default_profile_image);
-    }
+
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();

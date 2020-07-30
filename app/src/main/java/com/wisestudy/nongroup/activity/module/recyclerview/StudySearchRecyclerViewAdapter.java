@@ -1,35 +1,29 @@
-package com.wisestudy.planner.module.recyclerview;
+package com.wisestudy.nongroup.activity.module.recyclerview;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.wisestudy.nongroup.activity.vo.StudySearchVO;
 import com.wisestudy.wisestudy.R;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
+import java.util.List;
 
 public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySearchRecyclerViewAdapter.ViewHolder> {
 
-    private String[] name;
-    private String[] field;
-    private String[] number;
+    private List<StudySearchVO> studyVO;
     private LayoutInflater layoutInflater;
 
-    public StudySearchRecyclerViewAdapter(Context context, String[] name, String[] field, String[] number){
+    public StudySearchRecyclerViewAdapter(Context context, List<StudySearchVO>studyVO){
         this.layoutInflater=LayoutInflater.from(context);
-        this.name=name;
-        this.field=field;
-        this.number=number;
+        this.studyVO=new ArrayList<>();
+        this.studyVO=studyVO;
     }
 
     @NonNull
@@ -41,17 +35,17 @@ public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySe
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.textName.setText(name[position]);
-        holder.textField.setText(field[position]);
-        holder.textNumber.setText(number[position]);
+        holder.textName.setText(studyVO.get(position).getName());
+        holder.textField.setText(studyVO.get(position).getField());
+        holder.textNumber.setText(Integer.toString(studyVO.get(position).getNumber()));
     }
 
     @Override
     public int getItemCount() {
-        return name.length;
+        return studyVO.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textName;
         private TextView textField;
