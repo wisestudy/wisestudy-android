@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/groupLeaderCreateStudyToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:backgroundTint="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/groupleader_createstudy"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <androidx.viewpager.widget.ViewPager
+
+        android:id="@+id/groupLeaderViewPager"
+        android:layout_width="323dp"
+        android:layout_height="163dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderCreateStudyToolbar">
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <TextView
+        android:id="@+id/groupLeaderStudyNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="스터디 명"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/groupLeaderStudyName"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/groupLeaderViewPager"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderViewPager" />
+
+    <EditText
+        android:id="@+id/groupLeaderStudyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="86dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="8dp"
+        android:hint="스터디명을 입력해주세요"
+        android:inputType="textPersonName"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/groupLeaderName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderViewPager"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/groupLeaderNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:text="스터디 장"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/groupLeaderName"
+        app:layout_constraintStart_toStartOf="@+id/groupLeaderStudyNameTitle"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderStudyNameTitle" />
+
+    <EditText
+        android:id="@+id/groupLeaderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:hint="스터디장을 입력해주세요"
+        android:inputType="textPersonName"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/groupLeaderField"
+        app:layout_constraintEnd_toEndOf="@+id/groupLeaderStudyName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/groupLeaderStudyName" />
+
+    <TextView
+        android:id="@+id/groupLeaderFieldTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="분야"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/groupLeaderNameTitle"
+        app:layout_constraintStart_toStartOf="@+id/groupLeaderNameTitle"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderNameTitle" />
+
+    <EditText
+        android:id="@+id/groupLeaderField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:hint="분야를 입력해주세요"
+        android:inputType="textPersonName"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/groupLeaderTotalMember"
+        app:layout_constraintEnd_toEndOf="@+id/groupLeaderName"
+        app:layout_constraintStart_toStartOf="@+id/groupLeaderName" />
+
+    <TextView
+        android:id="@+id/groupLeaderTotalMemberTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="총 인원"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/groupLeaderFieldTitle"
+        app:layout_constraintStart_toStartOf="@+id/groupLeaderFieldTitle"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderFieldTitle" />
+
+    <EditText
+        android:id="@+id/groupLeaderTotalMember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:hint="7명"
+        android:inputType="number"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/groupLeaderRecruitMember"
+        app:layout_constraintEnd_toEndOf="@+id/groupLeaderField"
+        app:layout_constraintStart_toStartOf="@+id/groupLeaderField" />
+
+    <TextView
+        android:id="@+id/groupLeaderRecruitMemberTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="모집 인원"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/groupLeaderTotalMemberTitle"
+        app:layout_constraintStart_toStartOf="@+id/groupLeaderTotalMemberTitle"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderTotalMemberTitle" />
+
+    <EditText
+        android:id="@+id/groupLeaderRecruitMember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:hint="2명"
+        android:inputType="number"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/groupLeaderTotalMember"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/groupLeaderTotalMember" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
