@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.wisestudy.wisestudy.R;
 
-public class FirstFragment extends Fragment {
+public class NonGroupFirstFragment extends Fragment {
 
     public void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);

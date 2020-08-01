@@ -12,11 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.google.android.material.tabs.TabLayout;
-
-import com.wisestudy.nongroup.activity.viewPager.FirstFragment;
-import com.wisestudy.nongroup.activity.viewPager.SecondFragment;
-import com.wisestudy.nongroup.activity.viewPager.ThirdFragment;
 import com.wisestudy.nongroup.activity.viewPager.ViewPagerAdapter;
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;

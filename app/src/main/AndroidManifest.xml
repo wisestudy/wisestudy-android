@@ -16,13 +16,13 @@
         <activity android:name="com.wisestudy.login.activity.LoginActivity"></activity>
         <activity android:name="com.wisestudy.planner.activity.PlannerActivity"></activity>
         <activity android:name="com.wisestudy.nongroup.activity.StudySearchActivity">
+
+        </activity>
+        <activity android:name="com.wisestudy.nongroup.activity.NonGruopActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name="com.wisestudy.nongroup.activity.NonGruopActivity">
-
         </activity>
 
         <activity android:name="com.wisestudy.groupleader.activity.GroupManagement">
