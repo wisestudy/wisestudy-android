@@ -11,10 +11,6 @@
         android:theme="@style/mAppTheme"
         android:name="com.wisestudy.login.activity.LoginInit">
         <activity android:name="com.wisestudy.landing.activity.LandingActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="com.wisestudy.user.activity.UserCreateActivity"></activity>
         <activity android:name="com.wisestudy.login.activity.LoginActivity"></activity>
@@ -23,6 +19,12 @@
         <activity android:name="com.wisestudy.groupleader.activity.GroupManagementActivity">
         </activity>
         <activity android:name="com.wisestudy.groupleader.activity.CreateStudyActivity"/>
+        <activity android:name="com.wisestudy.groupleader.activity.CalendarModifyActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
