@@ -26,7 +26,7 @@
             android:textStyle="bold"
             android:layout_gravity="center"/>
     </com.google.android.material.appbar.MaterialToolbar>
-    <fragment
+    <RelativeLayout
         android:id="@+id/groupMemberLocationMap"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="310dp"

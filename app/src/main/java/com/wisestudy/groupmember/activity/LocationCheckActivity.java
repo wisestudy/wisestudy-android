@@ -1,11 +1,14 @@
 package com.wisestudy.groupmember.activity;
 
 import android.os.Bundle;
+import android.view.ViewGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
+
+import net.daum.mf.map.api.MapView;
 
 public class LocationCheckActivity extends AppCompatActivity {
     @Override
@@ -16,5 +19,10 @@ public class LocationCheckActivity extends AppCompatActivity {
 
         UiHelper.toolBarInitialize(this, findViewById(R.id.groupMemberLocationToolbar));
         UiHelper.hideWindow(this);
+
+        MapView mapView = new MapView(this);
+
+        ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.groupMemberLocationMap);
+        mapViewContainer.addView(mapView);
     }
 }
