@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wisestudy.wisestudy">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
@@ -10,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/mAppTheme"
         android:name="com.wisestudy.login.activity.LoginInit">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
         <activity android:name="com.wisestudy.landing.activity.LandingActivity">
         </activity>
         <activity android:name="com.wisestudy.user.activity.UserCreateActivity"></activity>
@@ -18,7 +24,12 @@
         <activity android:name="com.wisestudy.nongroup.activity.StudySearchActivity">
 
         </activity>
-        <activity android:name="com.wisestudy.nongroup.activity.NonGruopActivity">
+        <activity android:name="com.wisestudy.nongroup.activity.NonGruopActivity"/>
+        <activity android:name="com.wisestudy.groupleader.activity.GroupManagementActivity">
+        </activity>
+        <activity android:name="com.wisestudy.groupleader.activity.CreateStudyActivity"/>
+        <activity android:name="com.wisestudy.groupleader.activity.CalendarModifyActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
