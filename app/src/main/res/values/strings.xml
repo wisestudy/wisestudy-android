@@ -5,6 +5,15 @@
 
 
     <string name="group_management">관리</string>
+    <string name="non_group_management">상세화면</string>
+    <string name="non_group_apply_button">신청</string>
+    <string name="non_group_study_name">스터디 명</string>
+    <string name="non_group_study_leader">스터디 장</string>
+    <string name="non_group_study_field">분야</string>
+    <string name="non_group_study_total_number_of_people">총인원</string>
+    <string name="non_group_stduy_recreuitment">모집인원</string>
+    <string name="study_search_management">스터디 찾기</string>
+    <string name="study_search_item_member">인원</string>
     <string name="group_management_registertodo_button"> 일정 등록하기 </string>
     <string name="group_management_modify_button"> 그룹 수정하기 </string>
     <string name="group_management_currentapply_button"> 신청 현황</string>
