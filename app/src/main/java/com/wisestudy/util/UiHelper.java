@@ -22,7 +22,7 @@ public class UiHelper  {
     }
 
     /**
-        앱바 위에 보면 상태 표시줄이 있는데 상태표시줄을 없애는 코드
+     앱바 위에 보면 상태 표시줄이 있는데 상태표시줄을 없애는 코드
      **/
     public static void hideWindow(AppCompatActivity activity){
         activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
