@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="createstudy">
+        <item> 분야를 선택해 주세요 </item>
+        <item> 축구 </item>
+        <item> 농구 </item>
+    </string-array>
+
+
+</resources>

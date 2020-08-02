@@ -66,18 +66,18 @@
     <EditText
         android:id="@+id/groupLeaderStudyName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="86dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:hint="스터디명을 입력해주세요"
         android:inputType="textPersonName"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/groupLeaderName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/groupLeaderViewPager"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/groupLeaderStudyNameTitle"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderViewPager" />
 
     <TextView
         android:id="@+id/groupLeaderNameTitle"
@@ -97,14 +97,17 @@
         android:id="@+id/groupLeaderName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:hint="스터디장을 입력해주세요"
         android:inputType="textPersonName"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/groupLeaderField"
-        app:layout_constraintEnd_toEndOf="@+id/groupLeaderStudyName"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/groupLeaderStudyName" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/groupLeaderNameTitle"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderStudyName" />
 
     <TextView
         android:id="@+id/groupLeaderFieldTitle"
@@ -118,17 +121,19 @@
         app:layout_constraintStart_toStartOf="@+id/groupLeaderNameTitle"
         app:layout_constraintTop_toBottomOf="@+id/groupLeaderNameTitle" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/groupLeaderField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:hint="분야를 입력해주세요"
-        android:inputType="textPersonName"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/groupLeaderTotalMember"
-        app:layout_constraintEnd_toEndOf="@+id/groupLeaderName"
-        app:layout_constraintStart_toStartOf="@+id/groupLeaderName" />
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.794"
+        app:layout_constraintStart_toEndOf="@+id/groupLeaderFieldTitle"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderName" />
 
     <TextView
         android:id="@+id/groupLeaderTotalMemberTitle"

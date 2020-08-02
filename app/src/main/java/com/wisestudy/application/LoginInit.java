@@ -1,4 +1,4 @@
-package com.wisestudy.login.activity;
+package com.wisestudy.application;
 
 import android.app.Application;
 import android.content.Context;

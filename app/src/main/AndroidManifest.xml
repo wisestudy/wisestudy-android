@@ -11,10 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/mAppTheme"
-        android:name="com.wisestudy.login.activity.LoginInit">
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+        android:name="com.wisestudy.application.LoginInit">
 
         <activity android:name="com.wisestudy.landing.activity.LandingActivity">
         </activity>
@@ -24,7 +21,8 @@
 
         <activity android:name="com.wisestudy.groupleader.activity.GroupManagementActivity">
         </activity>
-        <activity android:name="com.wisestudy.groupleader.activity.CreateStudyActivity"/>
+        <activity android:name="com.wisestudy.groupleader.activity.CreateStudyActivity">
+        </activity>
         <activity android:name="com.wisestudy.groupleader.activity.CalendarModifyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
