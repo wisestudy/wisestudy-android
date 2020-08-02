@@ -1,4 +1,4 @@
-package com.wisestudy.nongroup.activity.vo;
+package com.wisestudy.nongroup.vo;
 
 public class StudySearchVO {
     private int image;

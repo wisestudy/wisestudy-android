@@ -1,4 +1,4 @@
-package com.wisestudy.nongroup.activity.viewPager;
+package com.wisestudy.nongroup.module.view.viewPager;
 
 
 import androidx.annotation.Nullable;

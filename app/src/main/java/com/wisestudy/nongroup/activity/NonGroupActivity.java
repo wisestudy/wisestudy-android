@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.wisestudy.nongroup.activity.viewPager.ViewPagerAdapter;
+import com.wisestudy.nongroup.module.view.viewPager.ViewPagerAdapter;
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
 
@@ -20,9 +20,8 @@ import java.util.ArrayList;
 
 import me.relex.circleindicator.CircleIndicator;
 
-public class NonGruopActivity extends AppCompatActivity {
+public class NonGroupActivity extends AppCompatActivity {
 
-    private ArrayList<Integer> imageList;
     private ViewPager viewPager;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,7 +55,7 @@ public class NonGruopActivity extends AppCompatActivity {
             }
 
             case R.id.toolbar_apply_button: {
-                AlertDialog.Builder dig = new AlertDialog.Builder(NonGruopActivity.this);
+                AlertDialog.Builder dig = new AlertDialog.Builder(NonGroupActivity.this);
                 dig.setTitle("신청");
                 dig.setMessage("신청 되었습니다.");
                 dig.setPositiveButton("확인", new DialogInterface.OnClickListener() {

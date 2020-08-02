@@ -1,6 +1,5 @@
-package com.wisestudy.nongroup.activity.viewPager;
+package com.wisestudy.nongroup.module.view.viewPager;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
