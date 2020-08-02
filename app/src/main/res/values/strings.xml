@@ -3,12 +3,15 @@
 
 
 
+
     <string name="group_management">관리</string>
     <string name="group_management_registertodo_button"> 일정 등록하기 </string>
     <string name="group_management_modify_button"> 그룹 수정하기 </string>
     <string name="group_management_currentapply_button"> 신청 현황</string>
     <string name="group_management_delete_button">그룹 삭제하기</string>
     <string name="group_management_admin">운영진 관리</string>
+    <string name="groupleader_createstudy"> 공고 작성 </string>
+    <string name="groupleader_createstudy_write"> 작성 </string>
     <string name="push_permission_ok">확인</string>
     <string name="push_permission_title">푸쉬 권한</string>
     <string name="push_permission_function">알림 기능</string>
@@ -18,4 +21,5 @@
     <string name="group_member_detailscreen_leave">탈퇴하다</string>
     <string name="group_member_detailscreen_title">상세화면</string>
     <string name="group_member_detailscreen_locationcheck">스터디원 위치확인</string>
+
 </resources>
