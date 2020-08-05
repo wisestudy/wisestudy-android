@@ -5,92 +5,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <View
-        android:id="@+id/mainRectangle"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/activity_myinformation_rectangle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/profileTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/activity_user_title"
-        android:textSize="20sp"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/user_profile_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:backgroundTint="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_schedule"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <Button
-        android:id="@+id/modifyBtn"
-        android:layout_width="81dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:background="#00FF0000"
-        android:text="@string/activity_user_modified_btn"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="600dp"
         android:background="#f1f1f1"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileTitle"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/user_profile_toolbar">
+
+        <EditText
+            android:id="@+id/nameView"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="28dp"
+            android:hint="@string/activity_user_name"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileImage1" />
 
         <EditText
             android:id="@+id/phoneView"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="12dp"
             android:hint="@string/activity_user_phone"
             android:textSize="10sp"
-            app:layout_constraintStart_toEndOf="@+id/phoneRectangle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ageView" />
+
+        <EditText
+            android:id="@+id/departmentView"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="12dp"
+            android:hint="@string/activity_user_introduce"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phoneView" />
+
+        <EditText
+            android:id="@+id/ageView"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="12dp"
+            android:hint="@string/activity_user_age"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameView" />
-
-        <View
-            android:id="@+id/phoneRectangle"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="23dp"
-            android:background="@drawable/activity_myinformation_rectangle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameRectangle" />
-
-        <View
-            android:id="@+id/departmentLine"
-            android:layout_width="0dp"
-            android:layout_height="3dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:background="#11000000"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/departmentLayout" />
 
         <View
             android:id="@+id/nameLine"
@@ -98,7 +82,7 @@
             android:layout_height="3dp"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="52dp"
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:background="#11000000"
@@ -107,22 +91,6 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/departmentView" />
-
-        <View
-            android:id="@+id/phoneLine"
-            android:layout_width="0dp"
-            android:layout_height="3dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:background="#11000000"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/groupLayout" />
 
         <ImageButton
             android:id="@+id/profilePicture"
@@ -136,7 +104,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/profileImage"
+            android:id="@+id/profileImage1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -145,120 +113,134 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
 
-        <View
-            android:id="@+id/nameRectangle"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/activity_myinformation_rectangle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profileImage" />
-
-        <EditText
-            android:id="@+id/nameView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:hint="@string/activity_user_name"
-            android:textSize="10sp"
-            app:layout_constraintStart_toEndOf="@+id/nameRectangle"
-            app:layout_constraintTop_toBottomOf="@+id/profileImage" />
-
-        <View
-            android:id="@+id/departmentRectangle"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="23dp"
-            android:background="@drawable/activity_myinformation_rectangle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/phoneRectangle" />
-
-        <EditText
-            android:id="@+id/departmentView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:hint="@string/activity_user_department"
-            android:textSize="10sp"
-            app:layout_constraintStart_toEndOf="@+id/departmentRectangle"
-            app:layout_constraintTop_toBottomOf="@+id/phoneView" />
-
-        <Button
-            android:id="@+id/startBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/activity_myinformation_ellipse"
-            android:text="@string/activity_user_recommend"
-            android:textColor="#FFFFFF"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/departmentLine" />
-
-        <TextView
-            android:id="@+id/groupText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/activity_user_join_study"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameLine" />
-
         <TextView
             android:id="@+id/interText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="20dp"
             android:text="@string/activity_user_interest_department"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/phoneLine" />
+            app:layout_constraintTop_toBottomOf="@+id/nameLine" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/departmentLayout"
-            android:layout_width="335dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
+        <TextView
+            android:id="@+id/nameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
+            android:text="@string/activity_user_name"
+            app:layout_constraintBottom_toBottomOf="@+id/nameView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/interText">
+            app:layout_constraintTop_toTopOf="@+id/nameView"
+            app:layout_constraintVertical_bias="0.437" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/phoneTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_user_phone"
+            app:layout_constraintBottom_toBottomOf="@+id/phoneView"
+            app:layout_constraintEnd_toEndOf="@+id/ageTitle"
+            app:layout_constraintTop_toTopOf="@+id/phoneView"
+            app:layout_constraintVertical_bias="0.437" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/groupLayout"
-            android:layout_width="335dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
+        <TextView
+            android:id="@+id/ageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
+            android:text="@string/activity_user_age"
+            app:layout_constraintBottom_toBottomOf="@+id/ageView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/groupText">
+            app:layout_constraintTop_toTopOf="@+id/ageView"
+            app:layout_constraintVertical_bias="0.375" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/introduceTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_user_introduce"
+            app:layout_constraintBottom_toBottomOf="@+id/departmentView"
+            app:layout_constraintEnd_toEndOf="@+id/phoneTitle"
+            app:layout_constraintTop_toTopOf="@+id/departmentView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="356dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@+id/interText"
+            app:layout_constraintTop_toBottomOf="@+id/interText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="#808080"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
     <Button
-        android:id="@+id/mainBtn"
-        android:layout_width="81dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="23dp"
-        android:background="#00ff0000"
-        android:text="@string/activity_main_view_btn"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/mainRectangle"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/searchBtn"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="@string/menu_search"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        app:backgroundTint="#ff3399"
+        app:layout_constraintBottom_toBottomOf="@+id/homeBtn"
+        app:layout_constraintStart_toEndOf="@+id/scheduleBtn"
+        app:layout_constraintTop_toTopOf="@+id/homeBtn"
+        app:layout_constraintVertical_bias="0.448" />
+
+    <Button
+        android:id="@+id/myBtn"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="@string/menu_my"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        app:backgroundTint="#ff3399"
+        app:layout_constraintBottom_toBottomOf="@+id/homeBtn"
+        app:layout_constraintStart_toEndOf="@+id/searchBtn"
+        app:layout_constraintTop_toTopOf="@+id/searchBtn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/scheduleBtn"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="@string/menu_schedule"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        app:backgroundTint="#ff3399"
+        app:layout_constraintBottom_toBottomOf="@+id/homeBtn"
+        app:layout_constraintStart_toEndOf="@+id/homeBtn"
+        app:layout_constraintTop_toTopOf="@+id/homeBtn" />
+
+    <Button
+        android:id="@+id/homeBtn"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:text="@string/menu_home"
+        android:textColor="#000000"
+        app:backgroundTint="#ff3399"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -111,7 +111,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/profileImage"
+            android:id="@+id/profileImage1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -129,7 +129,7 @@
             android:layout_marginTop="28dp"
             android:background="@drawable/activity_myinformation_rectangle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profileImage" />
+            app:layout_constraintTop_toBottomOf="@+id/profileImage1" />
 
         <EditText
             android:id="@+id/nameView"
@@ -141,7 +141,7 @@
             android:hint="@string/activity_user_name"
             android:textSize="10sp"
             app:layout_constraintStart_toEndOf="@+id/nameRectangle"
-            app:layout_constraintTop_toBottomOf="@+id/profileImage" />
+            app:layout_constraintTop_toBottomOf="@+id/profileImage1" />
 
         <View
             android:id="@+id/departmentRectangle"

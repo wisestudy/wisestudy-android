@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/timeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/group_time"
+        app:layout_constraintBottom_toBottomOf="@+id/dayBtn2"
+        app:layout_constraintStart_toEndOf="@+id/dayBtn"
+        app:layout_constraintTop_toTopOf="@+id/dayBtn2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/dayBtn2"
+        android:layout_width="38dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/activity_myinformation_titlecircle"
+        app:layout_constraintStart_toStartOf="@+id/dayBtn"
+        app:layout_constraintTop_toBottomOf="@+id/dayBtn" />
+
+    <Button
+        android:id="@+id/dayBtn"
+        android:layout_width="38dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/activity_myinformation_titlecircle"
+        app:layout_constraintStart_toStartOf="@+id/placeBtn"
+        app:layout_constraintTop_toBottomOf="@+id/placeBtn" />
+
+    <EditText
+        android:id="@+id/dayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/group_day"
+        app:layout_constraintBottom_toBottomOf="@+id/dayBtn"
+        app:layout_constraintStart_toEndOf="@+id/dayBtn"
+        app:layout_constraintTop_toTopOf="@+id/dayBtn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/schedule_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:backgroundTint="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_schedule"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <View
+        android:id="@+id/mainView"
+        android:layout_width="wrap_content"
+        android:layout_height="334dp"
+        android:background="#808080"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/schedule_toolbar" />
+
+    <TextView
+        android:id="@+id/studyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="70dp"
+        android:text="스터디01"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/schedule_toolbar" />
+
+    <TextView
+        android:id="@+id/groupMember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/group_member"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="356dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/groupMember"
+        app:layout_constraintTop_toBottomOf="@+id/groupMember" />
+
+    <Button
+        android:id="@+id/placeBtn"
+        android:layout_width="38dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/activity_myinformation_titlecircle"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+    <EditText
+        android:id="@+id/placeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/group_place"
+        app:layout_constraintBottom_toBottomOf="@+id/placeBtn"
+        app:layout_constraintStart_toEndOf="@+id/placeBtn"
+        app:layout_constraintTop_toTopOf="@+id/placeBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
