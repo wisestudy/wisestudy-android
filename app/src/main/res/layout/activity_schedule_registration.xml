@@ -62,7 +62,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_schedule"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+
+    />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="@string/menu_schedule_title"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/schedule_toolbar"
+        app:layout_constraintStart_toStartOf="@+id/schedule_toolbar"
+        app:layout_constraintTop_toTopOf="@+id/schedule_toolbar" />
 
     <View
         android:id="@+id/mainView"

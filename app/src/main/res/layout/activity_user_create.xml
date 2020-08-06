@@ -161,7 +161,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="28dp"
-            android:hint="@string/activity_user_department"
+            android:hint="관심분야"
             android:textSize="10sp"
             app:layout_constraintStart_toEndOf="@+id/departmentRectangle"
             app:layout_constraintTop_toBottomOf="@+id/phoneView" />
