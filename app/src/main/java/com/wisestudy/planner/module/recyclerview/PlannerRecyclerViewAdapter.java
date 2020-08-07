@@ -1,40 +1,37 @@
 package com.wisestudy.planner.module.recyclerview;
 
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.wisestudy.planner.vo.PlannerVO;
-import com.wisestudy.wisestudy.R;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.wisestudy.planner.vo.PlannerVO;
+import com.wisestudy.wisestudy.R;
 
 import java.util.List;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+public class PlannerRecyclerViewAdapter extends RecyclerView.Adapter<PlannerRecyclerViewAdapter.MyViewHolder> {
 
     private List<PlannerVO> recyclerDataList;
 
-    public RecyclerViewAdapter(List<PlannerVO> dataList){
+    public PlannerRecyclerViewAdapter(List<PlannerVO> dataList){
         recyclerDataList = dataList;
     }
 
     @NonNull
     @Override
-    public RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_planner_recyclerview,parent,false);
+    public PlannerRecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_planner_recyclerview_item,parent,false);
 
-        return new RecyclerViewAdapter.MyViewHolder(view);
+        return new PlannerRecyclerViewAdapter.MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PlannerRecyclerViewAdapter.MyViewHolder holder, int position) {
         holder.onBind(recyclerDataList.get(position),position);
     }
 
@@ -44,26 +41,23 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        private CircleImageView imageView;
         private TextView dateView;
         private TextView titleView;
-        private TextView contensView;
+        private TextView locationView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageView = itemView.findViewById(R.id.imageId);
             dateView = itemView.findViewById(R.id.dateId);
             titleView = itemView.findViewById(R.id.titleId);
-            contensView = itemView.findViewById(R.id.contentsId);
+            locationView = itemView.findViewById(R.id.locationId);
 
         }
 
         public void onBind(PlannerVO plannerVO, int position) {
-            imageView.setImageResource(recyclerDataList.get(position).getImageIndex());
             dateView.setText(recyclerDataList.get(position).getDate());
             titleView.setText(recyclerDataList.get(position).getTitle());
-            contensView.setText(recyclerDataList.get(position).getContents());
+            locationView.setText(recyclerDataList.get(position).getContents());
         }
     }
 }

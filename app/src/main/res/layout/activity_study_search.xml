@@ -23,49 +23,25 @@
             android:textColor="@color/black"
             android:textSize="20sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:text="@string/non_group_management" />
     </com.google.android.material.appbar.MaterialToolbar>
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="98dp"
-        android:layout_marginLeft="98dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="100dp"
 
-        android:layout_marginRight="100dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:background="@drawable/ediit_text_round"
         android:ems="10"
         android:hint="안드로이드"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/studySearchToolBar" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/soccerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="147dp"
-        android:layout_marginLeft="147dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="176dp"
-        android:layout_marginRight="176dp"
-        android:text="# 축구"
-        android:textSize="20dp"
-        android:textColor="@color/colorPoint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
-
-    </com.google.android.material.button.MaterialButton>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/study_search_recycler_view"
@@ -73,14 +49,14 @@
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/soccerButton" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

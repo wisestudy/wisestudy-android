@@ -1,103 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mainPageId"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:background="#f2f2f2"
-    tools:openDrawer="start"
     >
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/plannerToolBarId"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/plannerToolBarId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/calendar_toolbar_gradient"
-            android:minHeight="?attr/actionBarSize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-             />
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
 
+    <CalendarView
+        android:id="@+id/calendarId"
+        android:layout_width="match_parent"
+        android:layout_height="297dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/calendar_round"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plannerToolBarId">
 
-        <CalendarView
-            android:id="@+id/calendarId"
-            android:layout_width="310dp"
-            android:layout_height="297dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginRight="50dp"
-            android:background="@drawable/calendar_round"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-
-            app:layout_constraintTop_toTopOf="parent">
-
-        </CalendarView>
+    </CalendarView>
 
 
-        <TextView
-            android:id="@+id/dayId"
-            android:layout_width="62dp"
-            android:layout_height="27dp"
-            android:layout_marginTop="12dp"
-            android:lineSpacingExtra="7sp"
-            android:text="D-DAY"
-            android:textColor="#191919"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/calendarId"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/calendarId"
-            app:layout_constraintTop_toBottomOf="@+id/calendarId">
+    <TextView
+        android:id="@+id/dayId"
+        android:layout_width="62dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:lineSpacingExtra="7sp"
+        android:text="D-DAY"
+        android:textColor="#191919"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/calendarId"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/calendarId"
+        app:layout_constraintTop_toBottomOf="@+id/calendarId">
 
-        </TextView>
+    </TextView>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/plannerRecyclerId"
-            android:layout_width="315dp"
-            android:layout_height="250dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="@+id/dayId"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/plannerRecyclerId"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/dayId"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dayId">
 
-            app:layout_constraintStart_toStartOf="@+id/dayId"
-            app:layout_constraintTop_toBottomOf="@+id/dayId">
-
-        </androidx.recyclerview.widget.RecyclerView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationviewId"
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/activity_calendarpage_navigationdrawer"
-
-        tools:ignore="MissingClass">
-
-        <ExpandableListView
-            android:id="@+id/joinedGroupListId"
-            android:layout_width="wrap_content"
-            android:layout_height="400dp"
-            android:layout_marginTop="200dp"
-            android:layout_marginLeft="20dp"
-            android:groupIndicator="@drawable/expandablelistview_groupselector"
-            />
-
-    </com.google.android.material.navigation.NavigationView>
-
-</androidx.drawerlayout.widget.DrawerLayout>
+    </androidx.recyclerview.widget.RecyclerView>
+</androidx.constraintlayout.widget.ConstraintLayout>
