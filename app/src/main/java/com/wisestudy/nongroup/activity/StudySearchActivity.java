@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.wisestudy.nongroup.dto.ResponseDto;
 import com.wisestudy.nongroup.module.view.recyclerview.StudySearchRecyclerViewAdapter;
 import com.wisestudy.nongroup.service.CategoryService;
