@@ -30,9 +30,9 @@
         </activity>
         <activity android:name="com.wisestudy.groupleader.activity.CreateStudyActivity">
         </activity>
-        <activity android:name="com.wisestudy.groupleader.activity.CalendarModifyActivity">
+        <activity android:name="com.wisestudy.groupleader.activity.CalendarModifyActivity"/>
+        <activity android:name="com.wisestudy.groupleader.activity.PresentApplicationActivity"/>
 
-        </activity>
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
