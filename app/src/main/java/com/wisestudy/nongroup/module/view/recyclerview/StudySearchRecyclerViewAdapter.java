@@ -1,6 +1,5 @@
 package com.wisestudy.nongroup.module.view.recyclerview;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wisestudy.nongroup.vo.Study;
-import com.wisestudy.nongroup.vo.StudySearchVO;
 import com.wisestudy.wisestudy.R;
 
 import java.util.ArrayList;
@@ -51,8 +49,8 @@ public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySe
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textName=itemView.findViewById(R.id.study_name_text);
-            textField=itemView.findViewById(R.id.field_text);
-            textNumber=itemView.findViewById(R.id.number_text);
+            textField=itemView.findViewById(R.id.description_text);
+            textNumber=itemView.findViewById(R.id.description_text);
 
         }
     }
