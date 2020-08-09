@@ -14,24 +14,31 @@
         android:usesCleartextTraffic="true"
         android:name="com.wisestudy.application.LoginInit">
 
-        <activity android:name="com.wisestudy.landing.activity.LandingActivity">
-        </activity>
-        <activity android:name="com.wisestudy.user.activity.UserCreateActivity"></activity>
+        <activity android:name="com.wisestudy.landing.activity.LandingActivity"/>
+
         <activity android:name="com.wisestudy.login.activity.LoginActivity"></activity>
-        <activity android:name="com.wisestudy.planner.activity.PlannerActivity">
+
+        <activity android:name="com.wisestudy.planner.activity.PlannerActivity"/>
+        <activity android:name="com.wisestudy.planner.activity.PlannerDetailActivity"/>
+        <activity android:name="com.wisestudy.planner.activity.PlannerMemberLocationActivity"/>
+
+        <activity android:name="com.wisestudy.nongroup.activity.StudySearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.wisestudy.nongroup.activity.StudySearchActivity"/>
         <activity android:name="com.wisestudy.nongroup.activity.NonGroupActivity"/>
-        <activity android:name="com.wisestudy.groupleader.activity.GroupManagementActivity">
-        </activity>
-        <activity android:name="com.wisestudy.groupleader.activity.CreateStudyActivity">
-        </activity>
+
+        <activity android:name="com.wisestudy.groupleader.activity.GroupLeaderDetailActivity"/>
+        <activity android:name="com.wisestudy.groupleader.activity.GroupManagementActivity"/>
+        <activity android:name="com.wisestudy.groupleader.activity.GroupLeaderCreateStudyActivity"/>
         <activity android:name="com.wisestudy.groupleader.activity.CalendarModifyActivity"/>
         <activity android:name="com.wisestudy.groupleader.activity.PresentApplicationActivity"/>
+
+        <activity android:name="com.wisestudy.user.activity.UserActivity"/>
+        <activity android:name="com.wisestudy.user.activity.UserCreateActivity"/>
+
 
 
         <meta-data

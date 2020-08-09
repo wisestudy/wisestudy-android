@@ -15,14 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/study_search_management"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-
     </com.google.android.material.appbar.MaterialToolbar>
 
     <EditText
@@ -31,27 +23,30 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="24dp"
 
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:background="@drawable/ediit_text_round"
+        android:drawableLeft="@drawable/search"
         android:ems="10"
+        android:gravity="left|center"
         android:hint="안드로이드"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/studySearchToolBar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/study_search_recycler_view"
-        android:layout_width="383dp"
-        android:layout_height="452dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/study_search_bottom_view"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,19 +57,14 @@
         android:id="@+id/study_search_bottom_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="24dp"
+        android:background="@color/colorGray"
+        app:itemIconTint="#000000"
         app:itemTextColor="@color/black"
-        android:background="@color/Gray"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:labelVisibilityMode="labeled"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/study_search_recycler_view"
-        app:menu="@menu/study_search_menu_bottom_navigation_view"
-        app:itemIconTint="#000000"
-        />
-
+        app:menu="@menu/study_search_menu_bottom_navigation_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

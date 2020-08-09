@@ -4,8 +4,7 @@
 
     <item
         android:id="@+id/createStudy"
-        android:icon="@drawable/groupleader_createrstudy_check"
-        android:title="groupleader_createstudy_write"
+        android:title="@string/app_menu_save"
         app:showAsAction="ifRoom" />
 
 </menu>

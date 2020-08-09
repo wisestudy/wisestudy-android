@@ -17,7 +17,7 @@ public class UiHelper  {
         Toolbar toolbar = (Toolbar) view;
         activity.setSupportActionBar((toolbar));
         ActionBar actionBar = activity.getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼, 디폴트로 true만 해도 백버튼이 생김
+        actionBar.setDisplayHomeAsUpEnabled(false); // 뒤로가기 버튼, 디폴트로 true만 해도 백버튼이 생김
         actionBar.setDisplayShowTitleEnabled(false); // 제목 없애기
     }
 

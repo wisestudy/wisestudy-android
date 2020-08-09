@@ -32,4 +32,8 @@
     <string name="group_member_detailscreen_title">상세화면</string>
     <string name="group_member_detailscreen_locationcheck">스터디원 위치확인</string>
 
+    <string name="app_menu_modify">수정</string>
+    <string name="app_menu_management">관리</string>
+    <string name="app_menu_save">저장</string>
+
 </resources>

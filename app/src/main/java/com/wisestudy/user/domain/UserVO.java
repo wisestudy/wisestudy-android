@@ -1,29 +1,19 @@
 package com.wisestudy.user.domain;
 
-import java.util.Date;
+import java.util.List;
 
 public class UserVO {
 
-    private String email;
     private String name;
-    private Date birthday;
+    private Integer age;
     private String phone;
-    private String sex;
+    private List<UserStudyVO> list;
 
-    public UserVO(String email, String name, Date birthday, String phone, String sex) {
-        this.email = email;
+    public UserVO(String name, Integer age, String phone, List<UserStudyVO> list) {
         this.name = name;
-        this.birthday = birthday;
+        this.age = age;
         this.phone = phone;
-        this.sex = sex;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+        this.list = list;
     }
 
     public String getName() {
@@ -34,12 +24,12 @@ public class UserVO {
         this.name = name;
     }
 
-    public Date getBirthday() {
-        return birthday;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getPhone() {
@@ -50,11 +40,11 @@ public class UserVO {
         this.phone = phone;
     }
 
-    public String getSex() {
-        return sex;
+    public List<UserStudyVO> getList() {
+        return list;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setList(List<UserStudyVO> list) {
+        this.list = list;
     }
 }
