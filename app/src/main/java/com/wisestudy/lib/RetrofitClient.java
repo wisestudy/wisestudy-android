@@ -1,6 +1,5 @@
 package com.wisestudy.lib;
 
-import com.wisestudy.nongroup.retrofitapi.NonGroupCategoryApi;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -15,9 +14,9 @@ public class RetrofitClient {
     public static RetrofitApi getInstance(){
         if(retrofit == null) {
             retrofit = new Retrofit.Builder()
-                                  .baseUrl(baseUrl)
-                                  .addConverterFactory(GsonConverterFactory.create())
-                                  .build();
+                    .baseUrl(baseUrl)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
         }
 
         return retrofit.create(RetrofitApi.class);

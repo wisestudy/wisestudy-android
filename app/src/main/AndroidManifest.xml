@@ -20,13 +20,13 @@
 
         <activity android:name="com.wisestudy.planner.activity.PlannerActivity"/>
         <activity android:name="com.wisestudy.planner.activity.PlannerDetailActivity"/>
-        <activity android:name="com.wisestudy.planner.activity.PlannerMemberLocationActivity">
+        <activity android:name="com.wisestudy.planner.activity.PlannerMemberLocationActivity"/>
+        <activity android:name="com.wisestudy.nongroup.activity.NonGroupStudySearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.wisestudy.nongroup.activity.NonGroupStudySearchActivity"/>
         <activity android:name="com.wisestudy.nongroup.activity.NonGroupUserDetail"/>
 
         <activity android:name="com.wisestudy.groupleader.activity.GroupLeaderCalendarModifyActivity"/>

@@ -1,13 +1,17 @@
 package com.wisestudy.nongroup.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import com.wisestudy.nongroup.module.view.recyclerview.StudySearchRecyclerViewAdapter;
+import com.wisestudy.nongroup.service.StudyService;
+import com.wisestudy.nongroup.vo.Study;
 import com.wisestudy.nongroup.vo.StudySearchVO;
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
@@ -15,11 +19,17 @@ import com.wisestudy.wisestudy.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class NonGroupStudySearchActivity extends AppCompatActivity {
 
+    private static final String TAG = "STUDY_SERVICES";
+    private StudyService service;
     private StudySearchRecyclerViewAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-    private List<StudySearchVO> data;
+    private List<Study> data;
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,20 +38,34 @@ public class NonGroupStudySearchActivity extends AppCompatActivity {
         UiHelper.toolBarInitialize(this, findViewById(R.id.studySearchToolBar));
         UiHelper.hideWindow(this);
 
-        Initialized();
         RecyclerView recyclerView = findViewById(R.id.study_search_recycler_view);
         layoutManager = new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new StudySearchRecyclerViewAdapter(data);
-        recyclerView.setAdapter(adapter);
+        adapter = new StudySearchRecyclerViewAdapter();
+
+
+        service = new StudyService();
+        service.retrieveStudy(new Callback<List<Study>>() {
+            @Override
+            public void onResponse(Call<List<Study>> call, Response<List<Study>> response) {
+                if(response.isSuccessful() == false){
+                    Log.d(TAG,"Failed to register");
+                }
+
+                for(Study item : response.body()){
+                    adapter.addItems(item);
+                }
+                //adapter.addItems(response.body().getStudy());
+                recyclerView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onFailure(Call<List<Study>> call, Throwable t) {
+                System.out.println("=====>"+t.getMessage());
+
+            }
+        });
 
     }
 
-    private void Initialized() {
-        data = new ArrayList<>();
-        data.add(new StudySearchVO("안드로이드 입문","서울", "2/8", "안드로이드 초보자 환영"));
-        data.add(new StudySearchVO("자바스크립트","안양", "3/6", "자바스크립트 같이 하실 분"));
-        data.add(new StudySearchVO("Node.js","신림", "2/8", "백엔드의 세계로 초대 합니다."));
-        data.add(new StudySearchVO("딥러닝","수원", "1/4", "같이 배워나가요"));
-    }
 }

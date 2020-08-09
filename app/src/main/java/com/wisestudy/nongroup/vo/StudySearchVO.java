@@ -3,15 +3,14 @@ package com.wisestudy.nongroup.vo;
 import android.graphics.drawable.Drawable;
 
 public class StudySearchVO {
+
     private Drawable image;
     private String title;
-    private String locaton;
-    private String member;
+    private Integer member;
     private String description;
 
-    public StudySearchVO(String title, String locaton, String member, String description) {
+    public StudySearchVO(String title, Integer member, String description) {
         this.title = title;
-        this.locaton = locaton;
         this.member = member;
         this.description = description;
     }
@@ -24,19 +23,11 @@ public class StudySearchVO {
         this.title = title;
     }
 
-    public String getLocaton() {
-        return locaton;
-    }
-
-    public void setLocaton(String locaton) {
-        this.locaton = locaton;
-    }
-
-    public String getMember() {
+    public Integer getMember() {
         return member;
     }
 
-    public void setMember(String member) {
+    public void setMember(Integer member) {
         this.member = member;
     }
 

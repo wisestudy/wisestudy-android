@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
+import com.wisestudy.nongroup.vo.Study;
 import com.wisestudy.nongroup.vo.StudySearchVO;
 import com.wisestudy.wisestudy.R;
 
@@ -17,11 +18,8 @@ import java.util.List;
 
 public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySearchRecyclerViewAdapter.ViewHolder> {
 
-    private List<StudySearchVO> list = new ArrayList<>();
+    private List<Study> list = new ArrayList<>();
 
-    public StudySearchRecyclerViewAdapter(List<StudySearchVO> data) {
-        list = data;
-    }
 
     @NonNull
     @Override
@@ -33,8 +31,8 @@ public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySe
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.studySearchStudyTitle.setText(list.get(position).getTitle());
-        holder.studySearchStudyLocation.setText(list.get(position).getLocaton());
-        holder.studySearchStudyMemberCount.setText(list.get(position).getMember());
+        //holder.studySearchStudyLocation.setText(list.get(position).getLocaton());
+        holder.studySearchStudyMemberCount.setText(Integer.toString(list.get(position).getLimit()));
         holder.studySearchStudyDescription.setText(list.get(position).getDescription());
     }
 
@@ -43,6 +41,9 @@ public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySe
         return list.size();
     }
 
+    public void addItems(Study data){
+        list.add(data);
+    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ShapeableImageView studySearchImage;
@@ -62,4 +63,3 @@ public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySe
         }
     }
 }
-

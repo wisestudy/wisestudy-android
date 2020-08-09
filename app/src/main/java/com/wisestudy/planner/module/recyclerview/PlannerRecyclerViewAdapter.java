@@ -12,22 +12,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.wisestudy.planner.vo.PlannerVO;
 import com.wisestudy.wisestudy.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PlannerRecyclerViewAdapter extends RecyclerView.Adapter<PlannerRecyclerViewAdapter.MyViewHolder> {
 
-    private List<PlannerVO> recyclerDataList;
+    private List<PlannerVO> recyclerDataList = new ArrayList<>();
 
-    public PlannerRecyclerViewAdapter(List<PlannerVO> dataList){
-        recyclerDataList = dataList;
-    }
+
 
     @NonNull
     @Override
     public PlannerRecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_planner_recyclerview_item,parent,false);
 
-        return new PlannerRecyclerViewAdapter.MyViewHolder(view);
+        return new MyViewHolder(view);
     }
 
     @Override
@@ -40,6 +39,9 @@ public class PlannerRecyclerViewAdapter extends RecyclerView.Adapter<PlannerRecy
         return recyclerDataList.size();
     }
 
+    public void addItems(PlannerVO data){
+        recyclerDataList.add(data);
+    }
     public class MyViewHolder extends RecyclerView.ViewHolder{
         private TextView dateView;
         private TextView titleView;
@@ -55,10 +57,9 @@ public class PlannerRecyclerViewAdapter extends RecyclerView.Adapter<PlannerRecy
         }
 
         public void onBind(PlannerVO plannerVO, int position) {
-            dateView.setText(recyclerDataList.get(position).getDate());
-            titleView.setText(recyclerDataList.get(position).getTitle());
-            locationView.setText(recyclerDataList.get(position).getContents());
+            dateView.setText(recyclerDataList.get(position).getDatetime());
+            titleView.setText(recyclerDataList.get(position).getStudy());
+            locationView.setText(recyclerDataList.get(position).getPlace());
         }
     }
 }
-
