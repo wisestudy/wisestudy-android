@@ -15,7 +15,7 @@ import com.wisestudy.wisestudy.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PresentApplicationActivity extends AppCompatActivity {
+public class GroupLeaderPresentApplicationActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;

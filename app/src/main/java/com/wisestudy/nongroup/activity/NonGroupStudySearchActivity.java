@@ -15,7 +15,7 @@ import com.wisestudy.wisestudy.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudySearchActivity extends AppCompatActivity {
+public class NonGroupStudySearchActivity extends AppCompatActivity {
 
     private StudySearchRecyclerViewAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;

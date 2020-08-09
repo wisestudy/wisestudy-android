@@ -12,7 +12,7 @@ public class RetrofitClient {
 
     private RetrofitClient() {}
 
-    public static NonGroupCategoryApi getInstance(){
+    public static RetrofitApi getInstance(){
         if(retrofit == null) {
             retrofit = new Retrofit.Builder()
                                   .baseUrl(baseUrl)
@@ -20,6 +20,6 @@ public class RetrofitClient {
                                   .build();
         }
 
-        return retrofit.create(NonGroupCategoryApi.class);
+        return retrofit.create(RetrofitApi.class);
     }
 }

@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
 
-public class GroupManagementActivity extends AppCompatActivity {
+public class GroupLeaderManagementActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

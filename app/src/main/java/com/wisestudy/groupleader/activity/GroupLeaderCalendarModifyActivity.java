@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CalendarModifyActivity extends AppCompatActivity {
+public class GroupLeaderCalendarModifyActivity extends AppCompatActivity {
 
     private List<CalendarModifyVO> list;
     private RecyclerView recyclerView;

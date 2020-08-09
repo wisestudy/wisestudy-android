@@ -17,7 +17,6 @@ public class NonGroupUserDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_non_group_member);
 
-        UiHelper.toolBarInitialize(this, findViewById(R.id.nonGruopToolbar));
         UiHelper.hideWindow(this);
     }
 }

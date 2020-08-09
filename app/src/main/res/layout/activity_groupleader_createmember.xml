@@ -1,6 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/groupLeaderCreateStudyMemberToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <View
+        android:id="@+id/groupLeaderCreateStudyMemberView"
+        android:layout_width="0dp"
+        android:layout_height="231dp"
+        android:background="#dadada"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderCreateStudyMemberToolbar">
+
+    </View>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/groupLeaderCreateStudyMemberImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="68dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="@+id/groupLeaderCreateStudyMemberView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderCreateStudyMemberToolbar">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/groupLeaderCreateStudyMemberStudyNameTitle"
+        android:layout_width="84dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="스터디명"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderCreateStudyMemberView">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/groupLeaderCreateStudyMemberStudyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="8dp"
+        android:hint="스터디명을 입력하세요"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderCreateStudyMemberStudyNameTitle">
+
+    </com.google.android.material.textfield.TextInputEditText>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/groupLeaderCreateStudyMemberStudyDescriptionTitle"
+        android:layout_width="84dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="한줄소개"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderCreateStudyMemberStudyName">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/groupLeaderCreateStudyMemberStudyDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="8dp"
+        android:hint="소개를 입력하세요"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderCreateStudyMemberStudyDescriptionTitle">
+
+    </com.google.android.material.textfield.TextInputEditText>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/groupLeaderCreateStudyMemberStudyCollectMemberCountTitle"
+        android:layout_width="84dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="모집인원"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderCreateStudyMemberStudyDescription">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/groupLeaderCreateStudyMemberStudyCollectMemberCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="8dp"
+        android:hint="3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderCreateStudyMemberStudyCollectMemberCountTitle">
+    </com.google.android.material.textfield.TextInputEditText>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/groupLeaderCreateStudyMemberStudyField"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="분야"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderCreateStudyMemberStudyCollectMemberCount">
+
+    </com.google.android.material.textview.MaterialTextView>
 </androidx.constraintlayout.widget.ConstraintLayout>

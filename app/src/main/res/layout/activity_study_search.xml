@@ -27,7 +27,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:background="@drawable/ediit_text_round"
+        android:background="@drawable/edit_text_round"
         android:drawableLeft="@drawable/search"
         android:ems="10"
         android:gravity="left|center"
