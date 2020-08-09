@@ -38,20 +38,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/studySearchToolBar" />
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/studySearchRecommendList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="추천 스터디"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
+
+    </com.google.android.material.textview.MaterialTextView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/study_search_recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/study_search_bottom_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/studySearchRecommendList" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/study_search_bottom_view"
