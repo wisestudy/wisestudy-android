@@ -1,13 +1,17 @@
 package com.wisestudy.user.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.wisestudy.user.domain.UserStudyVO;
 import com.wisestudy.user.module.adapter.UserRecyclerViewAdapter;
 import com.wisestudy.util.UiHelper;
@@ -23,15 +27,18 @@ public class UserActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private List<UserStudyVO> list;
 
+    private MaterialToolbar toolbar;
+    private BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
 
-        UiHelper.toolBarInitialize(this,findViewById(R.id.userToolbar));
-        UiHelper.hideWindow(this);
-
         Initialized();
+
+        UiHelper.toolBarInitialize(this,toolbar);
+        UiHelper.hideWindow(this);
 
         recyclerView = findViewById(R.id.userApplyStudyRecyclerView);
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
@@ -39,10 +46,14 @@ public class UserActivity extends AppCompatActivity {
 
         adapter = new UserRecyclerViewAdapter(list);
         recyclerView.setAdapter(adapter);
+
+        UiHelper.navigationOnclick(this, bottomNavigationView);
     }
 
     private void Initialized() {
 
+        toolbar = findViewById(R.id.userToolbar);
+        bottomNavigationView = findViewById(R.id.userBottomNavigation);
         list = new ArrayList<>();
         list.add(new UserStudyVO("운기의 스터디","2020.08.15","범계역 스타벅스"));
         list.add(new UserStudyVO("문성이형의 스터디","2020.09.15","신림역 동네커피숍"));
@@ -55,5 +66,15 @@ public class UserActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.modify,menu);
 
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(item.getItemId() == R.id.appBarModify){
+            Intent intent = new Intent(getApplicationContext(), UserModifyActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

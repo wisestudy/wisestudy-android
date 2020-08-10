@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
 import com.wisestudy.groupleader.domain.GroupMemberVO;
+import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
 
 import java.util.List;
@@ -41,16 +42,34 @@ public class GroupLeaderManagementGroupMemberRecyclerViewAdapter extends Recycle
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
+        private MaterialButton memberOut;
         private MaterialTextView groupLeaderManagementGroupMemberName;
         private MaterialTextView groupLeaderManagementGroupMemberAge;
         private MaterialTextView groupLeaderManagementGroupMemberField;
-
+        private MaterialButton upgradeManager;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            memberOut = itemView.findViewById(R.id.memberOut);
             groupLeaderManagementGroupMemberName = itemView.findViewById(R.id.groupLeaderManagementGroupMemberName);
             groupLeaderManagementGroupMemberAge = itemView.findViewById(R.id.groupLeaderManagementGroupMemberAge);
             groupLeaderManagementGroupMemberField = itemView.findViewById(R.id.groupLeaderManagementGroupMemberField);
+            upgradeManager = itemView.findViewById(R.id.upgradeManager);
+
+            memberOut.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    UiHelper.dialogStart(itemView.getContext(),"탈퇴 시키시겠습니까?", false);
+                }
+            });
+
+            upgradeManager.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
 
         }
     }

@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/appBarModify"
+        android:id="@+id/management"
         android:title="@string/app_menu_management"
         app:showAsAction="always"/>
 </menu>

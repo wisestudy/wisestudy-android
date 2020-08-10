@@ -107,7 +107,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="12dp"
         android:gravity="center"
-        android:text="모집인원"
+        android:text="현재인원"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

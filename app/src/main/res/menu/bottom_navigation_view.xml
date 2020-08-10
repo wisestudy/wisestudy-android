@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_my"
+        android:enabled="true"
+        android:title="@string/bottom_navigation_mypage" />
+
+    <item
+        android:id="@+id/action_create"
+        android:enabled="true"
+        android:title="@string/bottom_navigation_create" />
+    <item
+        android:id="@+id/action_schedule"
+        android:enabled="true"
+        android:title="@string/bottom_navigation_schedule" />
+    <item
+        android:id="@+id/action_search"
+        android:enabled="true"
+        android:title="@string/bottom_navigation_serach" />
+
+</menu>

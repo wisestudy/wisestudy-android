@@ -12,11 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.wisestudy.nongroup.module.view.recyclerview.StudySearchRecyclerViewAdapter;
 import com.wisestudy.nongroup.service.StudyService;
 import com.wisestudy.nongroup.vo.Study;
-import com.wisestudy.nongroup.vo.StudySearchVO;
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -33,7 +31,7 @@ public class NonGroupStudySearchActivity extends AppCompatActivity {
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_study_search);
+        setContentView(R.layout.activity_nongroup_study_search);
 
         UiHelper.toolBarInitialize(this, findViewById(R.id.studySearchToolBar));
         UiHelper.hideWindow(this);
@@ -55,7 +53,6 @@ public class NonGroupStudySearchActivity extends AppCompatActivity {
                 for(Study item : response.body()){
                     adapter.addItems(item);
                 }
-                //adapter.addItems(response.body().getStudy());
                 recyclerView.setAdapter(adapter);
             }
 
@@ -65,7 +62,5 @@ public class NonGroupStudySearchActivity extends AppCompatActivity {
 
             }
         });
-
     }
-
 }

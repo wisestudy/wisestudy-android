@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/appbarMemo"
+        android:id="@+id/ok"
         android:title="@string/push_permission_ok"
         app:showAsAction="always"/>
 </menu>

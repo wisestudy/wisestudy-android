@@ -1,6 +1,7 @@
 package com.wisestudy.planner.module.recyclerview;
 
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.wisestudy.planner.activity.PlannerDetailActivity;
 import com.wisestudy.planner.vo.PlannerVO;
 import com.wisestudy.wisestudy.R;
 
@@ -18,8 +20,6 @@ import java.util.List;
 public class PlannerRecyclerViewAdapter extends RecyclerView.Adapter<PlannerRecyclerViewAdapter.MyViewHolder> {
 
     private List<PlannerVO> recyclerDataList = new ArrayList<>();
-
-
 
     @NonNull
     @Override
@@ -49,7 +49,6 @@ public class PlannerRecyclerViewAdapter extends RecyclerView.Adapter<PlannerRecy
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-
             dateView = itemView.findViewById(R.id.dateId);
             titleView = itemView.findViewById(R.id.titleId);
             locationView = itemView.findViewById(R.id.locationId);
@@ -60,6 +59,14 @@ public class PlannerRecyclerViewAdapter extends RecyclerView.Adapter<PlannerRecy
             dateView.setText(recyclerDataList.get(position).getDatetime());
             titleView.setText(recyclerDataList.get(position).getStudy());
             locationView.setText(recyclerDataList.get(position).getPlace());
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(itemView.getContext(), PlannerDetailActivity.class);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
         }
     }
 }

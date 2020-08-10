@@ -1,5 +1,6 @@
 package com.wisestudy.user.module.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,11 +9,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.wisestudy.groupleader.activity.GroupLeaderDetailActivity;
+import com.wisestudy.user.activity.UserDetailActivity;
 import com.wisestudy.user.domain.UserStudyVO;
 import com.wisestudy.wisestudy.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.wisestudy.login.activity.LoginActivity.studyCaptain;
 
 public class UserRecyclerViewAdapter extends RecyclerView.Adapter<UserRecyclerViewAdapter.ViewHolder> {
     private List<UserStudyVO> list = new ArrayList<>();
@@ -33,7 +38,6 @@ public class UserRecyclerViewAdapter extends RecyclerView.Adapter<UserRecyclerVi
         holder.userRecyclerViewStudyName.setText(list.get(position).getStudyName());
         holder.userRecyclerViewStudyDate.setText(list.get(position).getStudyDate());
         holder.userRecyclerViewStudyLocation.setText(list.get(position).getStudyLocation() );
-
     }
 
     @Override
@@ -53,6 +57,19 @@ public class UserRecyclerViewAdapter extends RecyclerView.Adapter<UserRecyclerVi
             userRecyclerViewStudyDate = itemView.findViewById(R.id.userRecyclerViewStudyDate);
             userRecyclerViewStudyLocation = itemView.findViewById(R.id.userRecyclerViewStudyLocation);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent;
+                    if(studyCaptain == true){
+                        intent = new Intent(itemView.getContext(), GroupLeaderDetailActivity.class);
+                    }else{
+                        intent = new Intent(itemView.getContext(), UserDetailActivity.class);
+                    }
+
+                    itemView.getContext().startActivity(intent);
+                }
+            });
         }
     }
 }

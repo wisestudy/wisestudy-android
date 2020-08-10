@@ -1,5 +1,6 @@
 package com.wisestudy.nongroup.module.view.recyclerview;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
+import com.wisestudy.nongroup.activity.NonGroupUserDetail;
 import com.wisestudy.nongroup.vo.Study;
-import com.wisestudy.nongroup.vo.StudySearchVO;
 import com.wisestudy.wisestudy.R;
 
 import java.util.ArrayList;
@@ -24,14 +25,13 @@ public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySe
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_study_search_recyclerview_item,parent,false);
+        View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_nongroup_studysearch_recyclerview_item,parent,false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.studySearchStudyTitle.setText(list.get(position).getTitle());
-        //holder.studySearchStudyLocation.setText(list.get(position).getLocaton());
         holder.studySearchStudyMemberCount.setText(Integer.toString(list.get(position).getLimit()));
         holder.studySearchStudyDescription.setText(list.get(position).getDescription());
     }
@@ -59,6 +59,14 @@ public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySe
             studySearchStudyLocation = itemView.findViewById(R.id.studySearchStudyLocation);
             studySearchStudyMemberCount = itemView.findViewById(R.id.studySearchStudyMemberCount);
             studySearchStudyDescription = itemView.findViewById(R.id.studySearchStudyDescription);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(itemView.getContext(), NonGroupUserDetail.class);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
 
         }
     }

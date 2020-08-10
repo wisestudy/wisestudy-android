@@ -1,4 +1,4 @@
-package com.wisestudy.groupleader.activity;
+package com.wisestudy.user.activity;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,32 +10,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
 
-public class GroupLeaderCreateStudyActivity extends AppCompatActivity {
-
+public class UserDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_groupmanagement_createstudy);
+        setContentView(R.layout.activity_userdeatail);
 
-        UiHelper.toolBarInitialize(this,findViewById(R.id.groupLeaderCreateStudyToolbar));
+        UiHelper.toolBarInitialize(this, findViewById(R.id.userDetailToolBar));
         UiHelper.hideWindow(this);
 
-        Initialized();
-
     }
 
-    private void Initialized() {
-
-
-
-    }
-
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.save, menu);
-
+        menuInflater.inflate(R.menu.menu_group_leave, menu);
         return true;
     }
-
-
 }

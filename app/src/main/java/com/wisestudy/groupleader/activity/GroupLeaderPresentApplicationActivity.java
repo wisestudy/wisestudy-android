@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wisestudy.groupleader.domain.PresentApplicationVO;
-import com.wisestudy.groupleader.module.adapter.recyclerviewadapter.PresentApplicationRecyclerViewAdapter;
+import com.wisestudy.groupleader.module.adapter.recyclerviewadapter.GroupLeaderPresentApplicationRecyclerViewAdapter;
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
 
@@ -36,7 +36,7 @@ public class GroupLeaderPresentApplicationActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new PresentApplicationRecyclerViewAdapter(list);
+        adapter = new GroupLeaderPresentApplicationRecyclerViewAdapter(list);
         recyclerView.setAdapter(adapter);
 
     }

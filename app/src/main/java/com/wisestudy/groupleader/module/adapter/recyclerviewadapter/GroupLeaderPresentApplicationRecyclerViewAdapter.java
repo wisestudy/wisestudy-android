@@ -14,17 +14,17 @@ import com.wisestudy.wisestudy.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PresentApplicationRecyclerViewAdapter extends RecyclerView.Adapter<PresentApplicationRecyclerViewAdapter.ViewHolder> {
+public class GroupLeaderPresentApplicationRecyclerViewAdapter extends RecyclerView.Adapter<GroupLeaderPresentApplicationRecyclerViewAdapter.ViewHolder> {
 
     private List<PresentApplicationVO> data = new ArrayList<>();
-    public PresentApplicationRecyclerViewAdapter(List<PresentApplicationVO> list) {
+    public GroupLeaderPresentApplicationRecyclerViewAdapter(List<PresentApplicationVO> list) {
         data = list;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activty_groupleader_presentapplication_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_groupleader_presentapplication_item,parent,false);
         return new ViewHolder(view);
     }
 

@@ -1,14 +1,8 @@
 package com.wisestudy.login.activity;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
-import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,17 +14,17 @@ import com.kakao.auth.Session;
 import com.kakao.auth.network.response.AccessTokenInfoResponse;
 import com.kakao.network.ErrorResult;
 import com.kakao.util.exception.KakaoException;
-import com.wisestudy.user.activity.UserCreateActivity;
+import com.wisestudy.user.activity.UserActivity;
 import com.wisestudy.wisestudy.R;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import android.content.pm.Signature;
 
-import static com.kakao.util.helper.Utility.getPackageInfo;
+public class LoginActivity extends AppCompatActivity {
+    private String accessToken;
+    /**
+     * 스터디 장, 스터디 멤버를 판별하는 변수
+     */
+    public static boolean studyCaptain = true;
 
-
-public class LoginActivity extends Activity {
     // 세션 콜백 구현
     private ISessionCallback sessionCallback = new ISessionCallback() {
         @Override
@@ -53,8 +47,10 @@ public class LoginActivity extends Activity {
                         public void onSuccess(AccessTokenInfoResponse result) {
                             Log.i("KAKAO_API", "사용자 아이디: " + result.getUserId());
                             Log.i("KAKAO_API", "남은 시간 (ms): " + result.getExpiresInMillis());
-                            Intent intent = new Intent(getApplicationContext(),UserCreateActivity.class);
-                            startActivity(intent);
+                            accessToken = Session.getCurrentSession().getAccessToken();
+                            Log.d("KAKAO_ACCESS_TOKEN", accessToken);
+
+                            successLogin();
                         }
                     });
         }
@@ -91,5 +87,12 @@ public class LoginActivity extends Activity {
         }
 
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void successLogin() {
+
+        Intent intent = new Intent(getApplicationContext(), UserActivity.class);
+        startActivity(intent);
+
     }
 }
