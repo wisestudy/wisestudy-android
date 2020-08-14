@@ -1,40 +1,27 @@
 package com.wisestudy.user.domain;
 
 public class UserStudyVO {
-    private String studyName;
-    /**
-     * date 타임으로 나중에서 수정
-     */
-    private String studyDate;
-    private String studyLocation;
+    private Integer id;
+    private String title;
 
-    public UserStudyVO(String studyName, String studyDate, String studyLocation) {
-        this.studyName = studyName;
-        this.studyDate = studyDate;
-        this.studyLocation = studyLocation;
+    public UserStudyVO(Integer id, String title) {
+        this.id = id;
+        this.title = title;
     }
 
-    public String getStudyName() {
-        return studyName;
+    public Integer getId() {
+        return id;
     }
 
-    public void setStudyName(String studyName) {
-        this.studyName = studyName;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getStudyDate() {
-        return studyDate;
+    public String getTitle() {
+        return title;
     }
 
-    public void setStudyDate(String studyDate) {
-        this.studyDate = studyDate;
-    }
-
-    public String getStudyLocation() {
-        return studyLocation;
-    }
-
-    public void setStudyLocation(String studyLocation) {
-        this.studyLocation = studyLocation;
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
