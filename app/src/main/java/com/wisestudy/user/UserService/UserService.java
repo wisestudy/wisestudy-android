@@ -1,12 +1,10 @@
 package com.wisestudy.user.UserService;
 
-import com.kakao.usermgmt.response.model.User;
 import com.wisestudy.lib.RetrofitApi;
 import com.wisestudy.lib.RetrofitClient;
 import com.wisestudy.nongroup.domain.StudyCreateVO;
-import com.wisestudy.nongroup.domain.StudyVO;
+import com.wisestudy.nongroup.nonGroupDto.StudySearchDto;
 import com.wisestudy.planner.vo.PlannerVO;
-import com.wisestudy.user.UserDto.UserRequestDto;
 import com.wisestudy.user.UserDto.UserResponseDto;
 
 import retrofit2.Call;
@@ -31,8 +29,8 @@ public class UserService {
         call.enqueue(callback);
     }
 
-    public void createStudy(StudyCreateVO studyCreateVO, Callback<UserResponseDto> callback){
-        Call<UserResponseDto> call = retrofitAPi.postUserCreateStudy(studyCreateVO);
+    public void createStudy(StudyCreateVO studyCreateVO, Callback<StudySearchDto> callback){
+        Call<StudySearchDto> call = retrofitAPi.postUserCreateStudy(studyCreateVO);
         call.enqueue(callback);
     }
 

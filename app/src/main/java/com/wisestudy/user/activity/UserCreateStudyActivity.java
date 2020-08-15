@@ -12,9 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.wisestudy.nongroup.domain.StudyCreateVO;
-import com.wisestudy.nongroup.domain.StudyVO;
-import com.wisestudy.user.UserDto.UserRequestDto;
-import com.wisestudy.user.UserDto.UserResponseDto;
+import com.wisestudy.nongroup.nonGroupDto.StudySearchDto;
 import com.wisestudy.user.UserService.UserService;
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
@@ -24,6 +22,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class UserCreateStudyActivity extends AppCompatActivity {
+    private static final String TAG = "USER_SERVICE";
     private UserService service;
     private TextInputEditText groupLeaderCreateStudyMemberStudyName;
     private TextInputEditText groupLeaderCreateStudyMemberStudyDescription;
@@ -60,21 +59,23 @@ public class UserCreateStudyActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         if(item.getItemId() == R.id.ok){
             service = new UserService();
-            service.createStudy(postStudy(), new Callback<UserResponseDto>() {
+            service.createStudy(postStudy(), new Callback<StudySearchDto>() {
                 @Override
-                public void onResponse(Call<UserResponseDto> call, Response<UserResponseDto> response) {
+                public void onResponse(Call<StudySearchDto> call, Response<StudySearchDto> response) {
                     if(response.isSuccessful() == false){
-                        Log.d("createStudy", "Failed to register");
+                        Log.d(TAG, "Failed to register");
                     }else{
-                        Log.d("createStudy", "Success to register");
+                        Log.d(TAG, "Success to register");
                     }
+
                 }
 
                 @Override
-                public void onFailure(Call<UserResponseDto> call, Throwable t) {
-
+                public void onFailure(Call<StudySearchDto> call, Throwable t) {
+                    Log.d(TAG, t.getMessage());
                 }
             });
+
             Intent intent = new Intent(getApplicationContext(), UserActivity.class);
             startActivity(intent);
         }

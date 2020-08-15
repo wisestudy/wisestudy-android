@@ -1,9 +1,6 @@
 package com.wisestudy.user.UserDto;
 
-import com.wisestudy.user.domain.UserStudyVO;
 import com.wisestudy.user.domain.UserVO;
-
-import java.util.List;
 
 public class UserResponseDto {
     private Integer code;
