@@ -8,6 +8,7 @@ import com.wisestudy.nongroup.domain.StudyVO;
 import com.wisestudy.nongroup.nonGroupDto.StudyDto;
 import com.wisestudy.nongroup.nonGroupDto.StudySearchDto;
 import com.wisestudy.planner.vo.PlannerVO;
+import com.wisestudy.user.domain.UserVO;
 import com.wisestudy.user.userDto.UserResponseDto;
 
 import java.util.List;
@@ -17,6 +18,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -59,9 +61,12 @@ public interface RetrofitApi {
     @GET("api/v1/users/{userId}")
     Call<UserResponseDto> getUsersId(@Path("userId") String id);
 
-    @POST("/api/v1/studies")
+    @POST("api/v1/studies")
     Call<StudyDto> postUserCreateStudy(@Body StudyCreateVO studyCreateVO);
 
+    @PUT("api/v1/users/{id}")
+    Call<UserVO> putUserInformation(@Path("id") String id,
+                         @Body UserVO userVO);
     /**
      * schedule
      * @param id

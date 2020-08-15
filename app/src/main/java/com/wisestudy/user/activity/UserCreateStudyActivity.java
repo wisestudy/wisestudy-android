@@ -67,6 +67,9 @@ public class UserCreateStudyActivity extends AppCompatActivity {
                         Log.d(TAG, "Failed to register");
                     }else{
                         Log.d(TAG, "Success to register");
+
+                        Intent intent = new Intent(getApplicationContext(), UserActivity.class);
+                        startActivity(intent);
                     }
 
                 }
@@ -76,9 +79,6 @@ public class UserCreateStudyActivity extends AppCompatActivity {
                     Log.d(TAG, t.getMessage());
                 }
             });
-
-            Intent intent = new Intent(getApplicationContext(), UserActivity.class);
-            startActivity(intent);
         }
         return true;
     }
@@ -94,5 +94,4 @@ public class UserCreateStudyActivity extends AppCompatActivity {
 
         return studyCreateVO;
     }
-
 }

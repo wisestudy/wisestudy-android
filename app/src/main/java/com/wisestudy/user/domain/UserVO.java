@@ -11,9 +11,11 @@ public class UserVO {
     private String cellphone;
     private String gender;
     private String categories;
-    private List<UserStudyVO> study_list;
+    private String description;
 
-    public UserVO(Integer user_id, String email, String name, Integer age, String cellphone, String gender, String categories, List<UserStudyVO> study_list) {
+    public List<UserStudyVO> study_list;
+
+    public UserVO(Integer user_id, String email, String name, Integer age, String cellphone, String gender, String categories, String description) {
         this.user_id = user_id;
         this.email = email;
         this.name = name;
@@ -21,7 +23,7 @@ public class UserVO {
         this.cellphone = cellphone;
         this.gender = gender;
         this.categories = categories;
-        this.study_list = study_list;
+        this.description = description;
     }
 
     public Integer getUser_id() {
@@ -80,6 +82,14 @@ public class UserVO {
         this.categories = categories;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public List<UserStudyVO> getStudy_list() {
         return study_list;
     }
@@ -88,3 +98,4 @@ public class UserVO {
         this.study_list = study_list;
     }
 }
+

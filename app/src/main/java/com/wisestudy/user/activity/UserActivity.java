@@ -30,6 +30,10 @@ import retrofit2.Response;
 
 public class UserActivity extends AppCompatActivity {
 
+    public static String userId;
+    public static String userEmail = "";
+    public static String userGender = "";
+
     private RecyclerView recyclerView;
     private UserRecyclerViewAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -76,6 +80,10 @@ public class UserActivity extends AppCompatActivity {
 
                     UserResponseDto item = response.body();
 
+                    userId = "" + item.getMessage().getUser_id();
+                    userEmail = item.getMessage().getEmail();
+                    userGender = item.getMessage().getGender();
+
                     TextName.setText(item.getMessage().getName());
                     TextAge.setText(item.getMessage().getAge() + "세");
                     TextPhoneNumber.setText(item.getMessage().getCellphone());
@@ -105,6 +113,7 @@ public class UserActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         if(item.getItemId() == R.id.appBarModify){
             Intent intent = new Intent(getApplicationContext(), UserModifyActivity.class);
+            intent.putExtra("USER_ID", userId );
             startActivity(intent);
             return true;
         }

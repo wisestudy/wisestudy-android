@@ -4,13 +4,13 @@ public class StudyCreateVO {
     private String category;
     private String title;
     private Integer limit;
-    private String descriptions;
+    private String description;
 
-    public StudyCreateVO(String category, String title, Integer limit, String descriptions) {
+    public StudyCreateVO(String category, String title, Integer limit, String description) {
         this.category = category;
         this.title = title;
         this.limit = limit;
-        this.descriptions = descriptions;
+        this.description = description;
     }
 
     public String getCategory() {
@@ -38,10 +38,10 @@ public class StudyCreateVO {
     }
 
     public String getDescriptions() {
-        return descriptions;
+        return description;
     }
 
     public void setDescriptions(String descriptions) {
-        this.descriptions = descriptions;
+        this.description = descriptions;
     }
 }
