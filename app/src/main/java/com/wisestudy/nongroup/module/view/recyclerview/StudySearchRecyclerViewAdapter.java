@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
 import com.wisestudy.nongroup.activity.NonGroupUserDetail;
-import com.wisestudy.nongroup.vo.Study;
+import com.wisestudy.nongroup.domain.StudyVO;
 import com.wisestudy.wisestudy.R;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import java.util.List;
 
 public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySearchRecyclerViewAdapter.ViewHolder> {
 
-    private List<Study> list = new ArrayList<>();
+    private List<StudyVO> list = new ArrayList<>();
 
 
     @NonNull
@@ -34,6 +34,7 @@ public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySe
         holder.studySearchStudyTitle.setText(list.get(position).getTitle());
         holder.studySearchStudyMemberCount.setText(Integer.toString(list.get(position).getLimit()));
         holder.studySearchStudyDescription.setText(list.get(position).getDescription());
+        holder.studySearchStudyLocation.setText(Integer.toString(list.get(position).getStudy_id()));
     }
 
     @Override
@@ -41,7 +42,7 @@ public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySe
         return list.size();
     }
 
-    public void addItems(Study data){
+    public void addItems(StudyVO data){
         list.add(data);
     }
 
@@ -56,14 +57,18 @@ public class StudySearchRecyclerViewAdapter extends RecyclerView.Adapter<StudySe
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             studySearchStudyTitle = itemView.findViewById(R.id.studySearchStudyTitle);
-            studySearchStudyLocation = itemView.findViewById(R.id.studySearchStudyLocation);
             studySearchStudyMemberCount = itemView.findViewById(R.id.studySearchStudyMemberCount);
             studySearchStudyDescription = itemView.findViewById(R.id.studySearchStudyDescription);
+            studySearchStudyLocation = itemView.findViewById(R.id.studySearchStudyLocation);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    String study_id = studySearchStudyLocation.getText().toString();
+
                     Intent intent = new Intent(itemView.getContext(), NonGroupUserDetail.class);
+                    intent.putExtra("STUDY_ID", study_id);
+
                     itemView.getContext().startActivity(intent);
                 }
             });

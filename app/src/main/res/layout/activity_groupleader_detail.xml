@@ -31,14 +31,13 @@
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/groupLeaderDetailStudyTitle"
         android:layout_width="176dp"
-        android:layout_height="59dp"
+        android:layout_height="94dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:gravity="center"
         android:text="스터디 01"
         android:textColor="@color/black"
         android:textSize="34dp"
-        android:gravity="center"
         app:layout_constraintEnd_toEndOf="@+id/groupLeaderDetailView"
         app:layout_constraintTop_toBottomOf="@+id/groupLeaderDetailToolBar">
 
@@ -97,6 +96,20 @@
         app:layout_constraintStart_toStartOf="parent">
 
     </com.google.android.material.button.MaterialButton>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/groupLeaderDetailRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.652"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groupLeaderDetailMember">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

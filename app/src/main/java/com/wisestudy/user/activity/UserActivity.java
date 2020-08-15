@@ -14,11 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.wisestudy.user.UserDto.UserDto;
+import com.wisestudy.user.UserDto.UserResponseDto;
 import com.wisestudy.user.domain.UserStudyVO;
-import com.wisestudy.user.domain.UserVO;
 import com.wisestudy.user.module.adapter.UserRecyclerViewAdapter;
-import com.wisestudy.user.retrofitapi.UserService;
+import com.wisestudy.user.UserService.UserService;
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
 
@@ -32,7 +31,7 @@ import retrofit2.Response;
 public class UserActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
+    private UserRecyclerViewAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private UserService services;
     private MaterialToolbar toolbar;
@@ -60,13 +59,14 @@ public class UserActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.userApplyStudyRecyclerView);
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
+        adapter = new UserRecyclerViewAdapter();
 
         UiHelper.navigationOnclick(this, bottomNavigationView);
 
         services = new UserService();
-        services.retrieveCategory(new Callback<UserDto>() {
+        services.retrieveUsersId(new Callback<UserResponseDto>() {
             @Override
-            public void onResponse(Call<UserDto> call, Response<UserDto> response) {
+            public void onResponse(Call<UserResponseDto> call, Response<UserResponseDto> response) {
                 if(response.isSuccessful() == false){
                     Log.d("User", "Failed to register");
                 }
@@ -74,29 +74,24 @@ public class UserActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     Log.d("User", "Successful");
 
-                    UserDto item = response.body();
+                    UserResponseDto item = response.body();
 
-                    item.getMessage().getName();
                     TextName.setText(item.getMessage().getName());
                     TextAge.setText(item.getMessage().getAge() + "세");
                     TextPhoneNumber.setText(item.getMessage().getCellphone());
 
-                    for(int i=0; i<item.getMessage().getStudy_list().size(); i++){
-                        Log.d("User", String.valueOf(item.getMessage().getStudy_list().get(i).getId()));
-                        Log.d("User", String.valueOf(item.getMessage().getStudy_list().get(i).getTitle()));
-                        list.add(new UserStudyVO(item.getMessage().getStudy_list().get(i).getId(),item.getMessage().getStudy_list().get(i).getTitle()));
-                    }
+                    adapter.addItems(response.body().getMessage().getStudy_list());
+                    recyclerView.setAdapter(adapter);
+
                 }
             }
 
             @Override
-            public void onFailure(Call<UserDto> call, Throwable t) {
+            public void onFailure(Call<UserResponseDto> call, Throwable t) {
                 Log.d("UserFailure", t.getMessage());
             }
-        });
+        }, "1");
 
-        adapter = new UserRecyclerViewAdapter(list);
-        recyclerView.setAdapter(adapter);
     }
 
     @Override

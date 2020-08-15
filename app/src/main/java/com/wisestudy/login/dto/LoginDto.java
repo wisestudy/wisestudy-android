@@ -1,16 +1,13 @@
-package com.wisestudy.user.UserDto;
+package com.wisestudy.login.dto;
 
-import com.wisestudy.user.domain.UserStudyVO;
-import com.wisestudy.user.domain.UserVO;
+import com.wisestudy.login.domain.LoginVO;
 
-import java.util.List;
-
-public class UserDto {
+public class LoginDto {
     private Integer code;
     private String status;
-    private UserVO message;
+    private LoginVO message;
 
-    public UserDto(Integer code, String status, UserVO message) {
+    public LoginDto(Integer code, String status, LoginVO message) {
         this.code = code;
         this.status = status;
         this.message = message;
@@ -32,12 +29,11 @@ public class UserDto {
         this.status = status;
     }
 
-    public UserVO getMessage() {
+    public LoginVO getMessage() {
         return message;
     }
 
-    public void setMessage(UserVO message) {
+    public void setMessage(LoginVO message) {
         this.message = message;
     }
-
 }

@@ -7,7 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.wisestudy.nongroup.service.StudyService;
-import com.wisestudy.nongroup.vo.Study;
+import com.wisestudy.nongroup.domain.StudyVO;
 import com.wisestudy.wisestudy.R;
 
 import java.util.List;
@@ -25,21 +25,21 @@ public class NonGroupMember extends AppCompatActivity {
         setContentView(R.layout.activity_non_group_member);
 
         service = new StudyService();
-        service.retrieveStudy(new Callback<List<Study>>() {
+        service.retrieveStudy(new Callback<List<StudyVO>>() {
             @Override
-            public void onResponse(Call<List<Study>> call, Response<List<Study>> response) {
+            public void onResponse(Call<List<StudyVO>> call, Response<List<StudyVO>> response) {
                 if(response.isSuccessful() == false){
                     Log.d("NonGroupMemberFail","Failed to register");
                 }
 
-                for(Study item : response.body()){
+                for(StudyVO item : response.body()){
                     Log.d("NonGroupMemSuccessful","Successful");
 
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Study>> call, Throwable t) {
+            public void onFailure(Call<List<StudyVO>> call, Throwable t) {
                 System.out.println("=====>"+t.getMessage());
 
             }

@@ -1,16 +1,16 @@
-package com.wisestudy.nongroup.vo;
+package com.wisestudy.nongroup.domain;
 
-public class Study {
+public class StudyVO {
 
     private Integer study_id;
-    private Integer category_id;
+    private String category;
     private String title;
     private Integer limit;
     private String description;
 
-    public Study(Integer study_id, Integer category_id, String title, Integer limit, String description) {
+    public StudyVO(Integer study_id, String category, String title, Integer limit, String description) {
         this.study_id = study_id;
-        this.category_id = category_id;
+        this.category = category;
         this.title = title;
         this.limit = limit;
         this.description = description;
@@ -24,12 +24,12 @@ public class Study {
         this.study_id = study_id;
     }
 
-    public Integer getCategory_id() {
-        return category_id;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategory_id(Integer category_id) {
-        this.category_id = category_id;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getTitle() {

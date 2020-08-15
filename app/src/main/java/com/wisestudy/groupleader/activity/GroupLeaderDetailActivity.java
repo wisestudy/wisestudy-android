@@ -9,9 +9,15 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textview.MaterialTextView;
 import com.wisestudy.groupleader.domain.GroupLeaderDetailVO;
+import com.wisestudy.groupleader.domain.GroupLeaderVO;
+import com.wisestudy.groupleader.groupleaderdto.GroupLeaderDto;
+import com.wisestudy.groupleader.module.adapter.recyclerviewadapter.GroupLeaderDetailRecyclerView;
 import com.wisestudy.groupleader.service.GroupLeaderDetailService;
 import com.wisestudy.planner.activity.PlannerActivity;
 import com.wisestudy.planner.service.PlannerService;
@@ -27,14 +33,19 @@ import retrofit2.Response;
 
 public class GroupLeaderDetailActivity extends AppCompatActivity {
     private MaterialButton createStudy;
+    private MaterialTextView groupLeaderDetailStudyTitle;
     private GroupLeaderDetailService services;
+    private String GroupLeaderStudyId;
+    private RecyclerView recyclerView;
+    private GroupLeaderDetailRecyclerView adapter;
+    private RecyclerView.LayoutManager layoutManager;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_groupleader_detail);
 
-        UiHelper.toolBarInitialize(this, findViewById(R.id.groupLeaderDetailToolBar));
-        UiHelper.hideWindow(this);
+        Initialized();
 
         createStudy = findViewById(R.id.groupLeaderDetailCreateStudy);
         createStudy.setOnClickListener(new View.OnClickListener() {
@@ -46,24 +57,42 @@ public class GroupLeaderDetailActivity extends AppCompatActivity {
         });
 
         services = new GroupLeaderDetailService();
-        services.retrieveSchedules(new Callback<List<GroupLeaderDetailVO>>() {
+        services.retrieveGroupLeaderDetail(new Callback<GroupLeaderDto>() {
             @Override
-            public void onResponse(Call<List<GroupLeaderDetailVO>> call, Response<List<GroupLeaderDetailVO>> response) {
+            public void onResponse(Call<GroupLeaderDto> call, Response<GroupLeaderDto> response) {
                 if(response.isSuccessful() == false){
                     Log.d("GroupLeaderDetail", "Failed to register");
                 }
+                else{
+                    Log.d("GroupLeaderDetail", "Success to register");
 
-                for(GroupLeaderDetailVO item : response.body()){
-                    System.out.println("==>"+item);
-                    Log.d("RetrofitSuccessful", "successful");
+                    adapter.addItems(response.body().getMessage().getStudy_members());
+                    recyclerView.setAdapter(adapter);
                 }
+
             }
 
             @Override
-            public void onFailure(Call<List<GroupLeaderDetailVO>> call, Throwable t) {
+            public void onFailure(Call<GroupLeaderDto> call, Throwable t) {
                 Log.d("GroupLeaderDetail", t.getMessage());
             }
-        });
+        },GroupLeaderStudyId);
+    }
+
+    private void Initialized() {
+        UiHelper.toolBarInitialize(this, findViewById(R.id.groupLeaderDetailToolBar));
+        UiHelper.hideWindow(this);
+
+        Intent getIntent = getIntent();
+        GroupLeaderStudyId = getIntent.getExtras().getString("studyId");
+        groupLeaderDetailStudyTitle = findViewById(R.id.groupLeaderDetailStudyTitle);
+        groupLeaderDetailStudyTitle.setText(getIntent.getExtras().getString("studyTitle"));
+
+        recyclerView = findViewById(R.id.groupLeaderDetailRecyclerView);
+        layoutManager = new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
+        recyclerView.setLayoutManager(layoutManager);
+
+        adapter = new GroupLeaderDetailRecyclerView();
     }
 
     @Override
