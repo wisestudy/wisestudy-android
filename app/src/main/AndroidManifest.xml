@@ -14,14 +14,14 @@
         android:usesCleartextTraffic="true"
         android:name="com.wisestudy.application.LoginInit">
 
-        <activity android:name="com.wisestudy.landing.activity.LandingActivity">
+        <activity android:name="com.wisestudy.landing.activity.LandingActivity"/>
+
+        <activity android:name="com.wisestudy.login.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.wisestudy.login.activity.LoginActivity"/>
 
         <activity android:name="com.wisestudy.planner.activity.PlannerActivity"/>
         <activity android:name="com.wisestudy.planner.activity.PlannerDetailActivity"/>
@@ -29,14 +29,14 @@
 
         <activity android:name="com.wisestudy.nongroup.activity.NonGroupStudySearchActivity"/>
         <activity android:name="com.wisestudy.nongroup.activity.NonGroupUserDetail"/>
-
+        <activity android:name="com.wisestudy.nongroup.activity.NonGroupMember"/>
         <activity android:name="com.wisestudy.user.activity.UserCreateStudyActivity"/>
         <activity android:name="com.wisestudy.groupleader.activity.GroupLeaderCreatePlannerActivity"/>
         <activity android:name="com.wisestudy.groupleader.activity.GroupLeaderDetailActivity"/>
         <activity android:name="com.wisestudy.groupleader.activity.GroupLeaderManagementActivity"/>
         <activity android:name="com.wisestudy.groupleader.activity.GroupLeaderManagementGroupMember"/>
         <activity android:name="com.wisestudy.groupleader.activity.GroupLeaderPresentApplicationActivity"/>
-
+        <activity android:name="com.wisestudy.groupleader.activity.GroupLeaderManagementSchedule"/>
         <activity android:name="com.wisestudy.user.activity.UserActivity"/>
         <activity android:name="com.wisestudy.user.activity.UserModifyActivity"/>
         <activity android:name="com.wisestudy.user.activity.UserDetailActivity"/>

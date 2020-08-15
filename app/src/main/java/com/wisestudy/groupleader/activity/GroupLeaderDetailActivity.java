@@ -2,28 +2,50 @@ package com.wisestudy.groupleader.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textview.MaterialTextView;
+import com.wisestudy.groupleader.domain.GroupLeaderDetailVO;
+import com.wisestudy.groupleader.domain.GroupLeaderVO;
+import com.wisestudy.groupleader.groupleaderdto.GroupLeaderDto;
+import com.wisestudy.groupleader.module.adapter.recyclerviewadapter.GroupLeaderDetailRecyclerView;
+import com.wisestudy.groupleader.service.GroupLeaderDetailService;
 import com.wisestudy.planner.activity.PlannerActivity;
+import com.wisestudy.planner.service.PlannerService;
+import com.wisestudy.planner.vo.PlannerVO;
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class GroupLeaderDetailActivity extends AppCompatActivity {
     private MaterialButton createStudy;
+    private MaterialTextView groupLeaderDetailStudyTitle;
+    private GroupLeaderDetailService services;
+    private String GroupLeaderStudyId;
+    private RecyclerView recyclerView;
+    private GroupLeaderDetailRecyclerView adapter;
+    private RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_groupleader_detail);
 
-        UiHelper.toolBarInitialize(this, findViewById(R.id.groupLeaderDetailToolBar));
-        UiHelper.hideWindow(this);
+        Initialized();
 
         createStudy = findViewById(R.id.groupLeaderDetailCreateStudy);
         createStudy.setOnClickListener(new View.OnClickListener() {
@@ -33,6 +55,44 @@ public class GroupLeaderDetailActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        services = new GroupLeaderDetailService();
+        services.retrieveGroupLeaderDetail(new Callback<GroupLeaderDto>() {
+            @Override
+            public void onResponse(Call<GroupLeaderDto> call, Response<GroupLeaderDto> response) {
+                if(response.isSuccessful() == false){
+                    Log.d("GroupLeaderDetail", "Failed to register");
+                }
+                else{
+                    Log.d("GroupLeaderDetail", "Success to register");
+
+                    adapter.addItems(response.body().getMessage().getStudy_members());
+                    recyclerView.setAdapter(adapter);
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<GroupLeaderDto> call, Throwable t) {
+                Log.d("GroupLeaderDetail", t.getMessage());
+            }
+        },GroupLeaderStudyId);
+    }
+
+    private void Initialized() {
+        UiHelper.toolBarInitialize(this, findViewById(R.id.groupLeaderDetailToolBar));
+        UiHelper.hideWindow(this);
+
+        Intent getIntent = getIntent();
+        GroupLeaderStudyId = getIntent.getExtras().getString("studyId");
+        groupLeaderDetailStudyTitle = findViewById(R.id.groupLeaderDetailStudyTitle);
+        groupLeaderDetailStudyTitle.setText(getIntent.getExtras().getString("studyTitle"));
+
+        recyclerView = findViewById(R.id.groupLeaderDetailRecyclerView);
+        layoutManager = new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
+        recyclerView.setLayoutManager(layoutManager);
+
+        adapter = new GroupLeaderDetailRecyclerView();
     }
 
     @Override
