@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wisestudy.groupleader.activity.GroupLeaderDetailActivity;
+import com.wisestudy.user.UserDto.UserDto;
 import com.wisestudy.user.activity.UserDetailActivity;
 import com.wisestudy.user.domain.UserStudyVO;
 import com.wisestudy.wisestudy.R;
@@ -35,9 +36,7 @@ public class UserRecyclerViewAdapter extends RecyclerView.Adapter<UserRecyclerVi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.userRecyclerViewStudyName.setText(list.get(position).getStudyName());
-        holder.userRecyclerViewStudyDate.setText(list.get(position).getStudyDate());
-        holder.userRecyclerViewStudyLocation.setText(list.get(position).getStudyLocation() );
+        holder.userRecyclerViewStudyName.setText(list.get(position).getTitle());
     }
 
     @Override
