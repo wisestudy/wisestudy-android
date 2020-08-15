@@ -9,8 +9,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textview.MaterialTextView;
-import com.kakao.usermgmt.response.model.User;
-import com.wisestudy.nongroup.domain.StudyVO;
 import com.wisestudy.user.domain.UserVO;
 import com.wisestudy.user.service.UserService;
 import com.wisestudy.util.UiHelper;
@@ -87,18 +85,18 @@ public class UserModifyActivity extends AppCompatActivity {
     }
 
     private UserVO putUser() {
-        String id = userId;
+        int id = Integer.parseInt(userId);
         String email = userEmail;
         String name = userModifyUserName.getText().toString();
         int age = Integer.parseInt(userModifyUserAge.getText().toString());
-        int phone = Integer.parseInt(userModifyUserPhone.getText().toString());
+        String phone = userModifyUserPhone.getText().toString();
         String gender = userGender;
         String des = userModifyUserDescription.getText().toString();
-        String categories = "안드로이드"
+        String categories = "안드로이드";
 
         UserVO userVO = new UserVO(id,email,name,age,phone,gender,des,categories);
 
 
-        return userVo;
+        return userVO;
     }
 }
