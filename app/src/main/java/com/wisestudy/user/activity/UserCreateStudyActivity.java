@@ -12,8 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.wisestudy.nongroup.domain.StudyCreateVO;
-import com.wisestudy.nongroup.nonGroupDto.StudySearchDto;
-import com.wisestudy.user.UserService.UserService;
+import com.wisestudy.nongroup.nonGroupDto.StudyDto;
+import com.wisestudy.user.service.UserService;
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
 
@@ -24,6 +24,7 @@ import retrofit2.Response;
 public class UserCreateStudyActivity extends AppCompatActivity {
     private static final String TAG = "USER_SERVICE";
     private UserService service;
+    private StudyCreateVO studyCreateVO;
     private TextInputEditText groupLeaderCreateStudyMemberStudyName;
     private TextInputEditText groupLeaderCreateStudyMemberStudyDescription;
     private TextInputEditText groupLeaderCreateStudyMemberStudyCollectMemberCount;
@@ -59,9 +60,9 @@ public class UserCreateStudyActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         if(item.getItemId() == R.id.ok){
             service = new UserService();
-            service.createStudy(postStudy(), new Callback<StudySearchDto>() {
+            service.createStudy(postStudy(), new Callback<StudyDto>() {
                 @Override
-                public void onResponse(Call<StudySearchDto> call, Response<StudySearchDto> response) {
+                public void onResponse(Call<StudyDto> call, Response<StudyDto> response) {
                     if(response.isSuccessful() == false){
                         Log.d(TAG, "Failed to register");
                     }else{
@@ -71,7 +72,7 @@ public class UserCreateStudyActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(Call<StudySearchDto> call, Throwable t) {
+                public void onFailure(Call<StudyDto> call, Throwable t) {
                     Log.d(TAG, t.getMessage());
                 }
             });
@@ -83,11 +84,14 @@ public class UserCreateStudyActivity extends AppCompatActivity {
     }
 
     private StudyCreateVO postStudy(){
+
+        String field = "안드로이드";
         String name = groupLeaderCreateStudyMemberStudyName.getText().toString();
         String des = groupLeaderCreateStudyMemberStudyDescription.getText().toString();
         int member = Integer.parseInt(groupLeaderCreateStudyMemberStudyCollectMemberCount.getText().toString());
 
-        StudyCreateVO studyCreateVO = new StudyCreateVO("안드로이드",name,member,des);
+        studyCreateVO = new StudyCreateVO(field, name, member, des);
+
         return studyCreateVO;
     }
 

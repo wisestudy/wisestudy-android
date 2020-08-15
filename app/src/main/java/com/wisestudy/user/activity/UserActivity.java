@@ -14,10 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.wisestudy.user.UserDto.UserResponseDto;
+import com.wisestudy.user.userDto.UserResponseDto;
 import com.wisestudy.user.domain.UserStudyVO;
 import com.wisestudy.user.module.adapter.UserRecyclerViewAdapter;
-import com.wisestudy.user.UserService.UserService;
+import com.wisestudy.user.service.UserService;
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
 

@@ -8,7 +8,7 @@ import com.wisestudy.nongroup.domain.StudyVO;
 import com.wisestudy.nongroup.nonGroupDto.StudyDto;
 import com.wisestudy.nongroup.nonGroupDto.StudySearchDto;
 import com.wisestudy.planner.vo.PlannerVO;
-import com.wisestudy.user.UserDto.UserResponseDto;
+import com.wisestudy.user.userDto.UserResponseDto;
 
 import java.util.List;
 
@@ -60,7 +60,7 @@ public interface RetrofitApi {
     Call<UserResponseDto> getUsersId(@Path("userId") String id);
 
     @POST("/api/v1/studies")
-    Call<StudySearchDto> postUserCreateStudy(@Body StudyCreateVO studyCreateVO);
+    Call<StudyDto> postUserCreateStudy(@Body StudyCreateVO studyCreateVO);
 
     /**
      * schedule

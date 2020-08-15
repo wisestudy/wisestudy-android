@@ -1,4 +1,4 @@
-package com.wisestudy.user.UserDto;
+package com.wisestudy.user.userDto;
 
 import com.wisestudy.user.domain.UserVO;
 
