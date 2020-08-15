@@ -4,16 +4,40 @@ import java.util.List;
 
 public class UserVO {
 
+    private Integer user_id;
+    private String email;
     private String name;
     private Integer age;
-    private String phone;
-    private List<UserStudyVO> list;
+    private String cellphone;
+    private String gender;
+    private String categories;
+    private List<UserStudyVO> study_list;
 
-    public UserVO(String name, Integer age, String phone, List<UserStudyVO> list) {
+    public UserVO(Integer user_id, String email, String name, Integer age, String cellphone, String gender, String categories, List<UserStudyVO> study_list) {
+        this.user_id = user_id;
+        this.email = email;
         this.name = name;
         this.age = age;
-        this.phone = phone;
-        this.list = list;
+        this.cellphone = cellphone;
+        this.gender = gender;
+        this.categories = categories;
+        this.study_list = study_list;
+    }
+
+    public Integer getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {
@@ -32,19 +56,35 @@ public class UserVO {
         this.age = age;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getCellphone() {
+        return cellphone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setCellphone(String cellphone) {
+        this.cellphone = cellphone;
     }
 
-    public List<UserStudyVO> getList() {
-        return list;
+    public String getGender() {
+        return gender;
     }
 
-    public void setList(List<UserStudyVO> list) {
-        this.list = list;
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getCategories() {
+        return categories;
+    }
+
+    public void setCategories(String categories) {
+        this.categories = categories;
+    }
+
+    public List<UserStudyVO> getStudy_list() {
+        return study_list;
+    }
+
+    public void setStudy_list(List<UserStudyVO> study_list) {
+        this.study_list = study_list;
     }
 }
