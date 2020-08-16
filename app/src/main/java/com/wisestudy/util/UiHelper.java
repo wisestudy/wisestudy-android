@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -15,11 +16,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.wisestudy.groupleader.service.GroupLeaderDetailService;
 import com.wisestudy.nongroup.activity.NonGroupStudySearchActivity;
 import com.wisestudy.planner.activity.PlannerActivity;
 import com.wisestudy.user.activity.UserActivity;
 import com.wisestudy.user.activity.UserCreateStudyActivity;
 import com.wisestudy.wisestudy.R;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class UiHelper {
 
@@ -81,7 +88,7 @@ public class UiHelper {
         });
     }
 
-    public static void dialogStart(Context context, String message, boolean flag) {
+    public static void dialogStart(Context context, String message, boolean flag,String id) {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
         alertDialog.setMessage(message);
         if(flag == false){
@@ -89,6 +96,23 @@ public class UiHelper {
             alertDialog.setPositiveButton("예", new DialogInterface.OnClickListener(){
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+                    GroupLeaderDetailService service = new GroupLeaderDetailService();
+                    service.retrieveGroupLeaderManagementGroupMemberDelete(new Callback<ResponseBody>() {
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                            if(response.isSuccessful() == false){
+                                Log.d("GroupMemberDelete", "Failed to register");
+                            }else{
+
+                                Log.d("body",response.body().toString()+"=-=-");
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                        }
+                    },"1",id);
                 }
             });
 
@@ -99,7 +123,24 @@ public class UiHelper {
                 public void onClick(DialogInterface dialog, int which) {
                 }
             });
-        }else{
+        }
+        // 메인 다이얼로그 생성
+        AlertDialog alert = alertDialog.create();
+        // 다이얼로그 보기
+        alert.setOnShowListener( new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface arg0) {
+                alert.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+                alert.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+            }
+        });
+
+        alert.show();
+    }
+    public static void dialogStart(Context context, String message, boolean flag) {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+        alertDialog.setMessage(message);
+        if(flag == true){
             // 확인버튼
             alertDialog.setPositiveButton("예", new DialogInterface.OnClickListener(){
                 @Override
@@ -110,7 +151,7 @@ public class UiHelper {
                 }
             });
 
-        }
+    }
 
         // 메인 다이얼로그 생성
         AlertDialog alert = alertDialog.create();
