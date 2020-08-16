@@ -65,8 +65,7 @@
         android:layout_width="26dp"
         android:layout_height="26dp"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="122dp"
         android:background="@color/colorGray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/groupLeaderCreateStudyMember">

@@ -1,6 +1,7 @@
 package com.wisestudy.lib;
 
 
+import com.wisestudy.groupleader.domain.GroupLeaderMangementPlannerVO;
 import com.wisestudy.groupleader.groupleaderdto.GroupLeaderDto;
 import com.wisestudy.login.dto.LoginDto;
 import com.wisestudy.nongroup.domain.StudyCreateVO;
@@ -74,4 +75,8 @@ public interface RetrofitApi {
      */
     @GET("api/v1/schedules/{userId}")
     Call<PlannerVO> getScheduleID(@Path("userId") String id);
+
+    @POST("api/v1/studies/{studies_id}/schedules")
+    Call<GroupLeaderMangementPlannerVO> postGroupSchedule( @Path("studies_id") String id,
+                                                           @Body GroupLeaderMangementPlannerVO groupLeaderMangementPlannerVO);
 }

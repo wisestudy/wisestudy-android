@@ -14,18 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
-import com.wisestudy.groupleader.domain.GroupLeaderDetailVO;
-import com.wisestudy.groupleader.domain.GroupLeaderVO;
 import com.wisestudy.groupleader.groupleaderdto.GroupLeaderDto;
 import com.wisestudy.groupleader.module.adapter.recyclerviewadapter.GroupLeaderDetailRecyclerView;
-import com.wisestudy.groupleader.service.GroupLeaderDetailService;
-import com.wisestudy.planner.activity.PlannerActivity;
-import com.wisestudy.planner.service.PlannerService;
-import com.wisestudy.planner.vo.PlannerVO;
+import com.wisestudy.groupleader.service.GroupLeaderService;
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,8 +27,8 @@ import retrofit2.Response;
 public class GroupLeaderDetailActivity extends AppCompatActivity {
     private MaterialButton createStudy;
     private MaterialTextView groupLeaderDetailStudyTitle;
-    private GroupLeaderDetailService services;
-    private String GroupLeaderStudyId;
+    private GroupLeaderService services;
+    public static String GroupLeaderStudyId = "";
     private RecyclerView recyclerView;
     private GroupLeaderDetailRecyclerView adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -56,7 +49,7 @@ public class GroupLeaderDetailActivity extends AppCompatActivity {
             }
         });
 
-        services = new GroupLeaderDetailService();
+        services = new GroupLeaderService();
         services.retrieveGroupLeaderDetail(new Callback<GroupLeaderDto>() {
             @Override
             public void onResponse(Call<GroupLeaderDto> call, Response<GroupLeaderDto> response) {
