@@ -19,7 +19,7 @@ public class PlannerService {
     }
 
     public void retrieveCategory(Callback<List<PlannerVO>> callback){
-        Call<List<PlannerVO>> call = retrofitAPi.getCategories();
+        Call<List<PlannerVO>> call = retrofitAPi.getPlanner();
         call.enqueue(callback);
     }
 

@@ -14,12 +14,14 @@ import com.kakao.auth.Session;
 import com.kakao.auth.network.response.AccessTokenInfoResponse;
 import com.kakao.network.ErrorResult;
 import com.kakao.util.exception.KakaoException;
+import com.wisestudy.lib.TokenManager;
 import com.wisestudy.login.domain.LoginVO;
 import com.wisestudy.login.dto.LoginDto;
 import com.wisestudy.login.service.LoginService;
 import com.wisestudy.nongroup.domain.StudyVO;
 import com.wisestudy.nongroup.service.StudyService;
 import com.wisestudy.user.activity.UserActivity;
+import com.wisestudy.user.activity.UserModifyActivity;
 import com.wisestudy.wisestudy.R;
 
 import java.util.List;
@@ -32,6 +34,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
     private LoginService service;
     private String accessToken;
+    private String jwtToken;
     /**
      * 스터디 장, 스터디 멤버를 판별하는 변수
      */
@@ -68,8 +71,13 @@ public class LoginActivity extends AppCompatActivity {
                                         Log.d("LoginFail","Failed to register");
                                     }else{
                                         Log.d("LoginSuccess","Success to register");
-                                        System.out.println("=====>" + response.body().getMessage().getJwt());
-                                        successLogin();
+                                        if(TokenManager.get(getApplicationContext()) == null){
+                                            TokenManager.set(getApplicationContext(),response.body().getMessage().getJwt());
+                                            Intent intent = new Intent(getApplicationContext(), UserModifyActivity.class);
+                                            startActivity(intent);
+                                        }else{
+                                            successLogin();
+                                        }
                                     }
                                 }
 

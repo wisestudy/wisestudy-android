@@ -32,7 +32,7 @@ public interface RetrofitApi {
      * @return
      */
     @GET("/api/v1/schedules")
-    Call<List<PlannerVO>> getCategories();
+    Call<List<PlannerVO>> getPlanner();
 
     /**
      * nongroup Api
