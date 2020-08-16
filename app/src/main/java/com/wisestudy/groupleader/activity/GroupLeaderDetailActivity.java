@@ -35,7 +35,7 @@ public class GroupLeaderDetailActivity extends AppCompatActivity {
     private MaterialButton createStudy;
     private MaterialTextView groupLeaderDetailStudyTitle;
     private GroupLeaderDetailService services;
-    private String GroupLeaderStudyId;
+    public static String GroupLeaderStudyId = "";
     private RecyclerView recyclerView;
     private GroupLeaderDetailRecyclerView adapter;
     private RecyclerView.LayoutManager layoutManager;

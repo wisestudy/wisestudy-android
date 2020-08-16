@@ -13,8 +13,10 @@ import com.wisestudy.user.userDto.UserResponseDto;
 
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
@@ -74,4 +76,19 @@ public interface RetrofitApi {
      */
     @GET("api/v1/schedules/{userId}")
     Call<PlannerVO> getScheduleID(@Path("userId") String id);
+
+    /**
+     *
+     * ManagementGroupMember Api
+     *
+     */
+    @GET("api/v1/studies/{studies_id}/members")
+    Call<GroupLeaderDto> getGroupLeaderManagementGroupMember(@Path("studies_id") String id);
+    /**
+     * ManagementGroupMemberDelete Api
+     */
+    @DELETE("/api/v1/studies/{studies_id}/members/{study_members_id}")
+    Call<ResponseBody> deleteGroupMember(@Path("studies_id") String studies_id, @Path("study_members_id") String study_members_id);
+
+
 }

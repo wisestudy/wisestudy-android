@@ -9,18 +9,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
-import com.wisestudy.groupleader.domain.GroupMemberVO;
+import com.wisestudy.groupleader.domain.GroupLeaderVO;
 import com.wisestudy.util.UiHelper;
 import com.wisestudy.wisestudy.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GroupLeaderManagementGroupMemberRecyclerViewAdapter extends RecyclerView.Adapter<GroupLeaderManagementGroupMemberRecyclerViewAdapter.ViewHolder> {
-    private List<GroupMemberVO> list;
-
-    public GroupLeaderManagementGroupMemberRecyclerViewAdapter(List<GroupMemberVO> data) {
-        list = data;
-    }
+    private List<GroupLeaderVO> list = new ArrayList<>();
+    private String id;
 
     @NonNull
     @Override
@@ -31,11 +29,16 @@ public class GroupLeaderManagementGroupMemberRecyclerViewAdapter extends Recycle
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.groupLeaderManagementGroupMemberName.setText(list.get(position).getName());
-        holder.groupLeaderManagementGroupMemberAge.setText(list.get(position).getAge());
-        holder.groupLeaderManagementGroupMemberField.setText(list.get(position).getField());
-    }
 
+        id = String.valueOf(list.get(position).getStudy_member_id());
+        holder.groupLeaderManagementGroupMemberName.setText(list.get(position).getName());
+        holder.groupLeaderManagementGroupMemberAge.setText(String.valueOf(list.get(position).getAge()));
+        holder.groupLeaderManagementGroupMemberField.setText(list.get(position).getCategories());
+
+    }
+    public void addItems(GroupLeaderVO data){
+        list.add(data);
+    }
     @Override
     public int getItemCount() {
         return list.size();
@@ -56,11 +59,12 @@ public class GroupLeaderManagementGroupMemberRecyclerViewAdapter extends Recycle
             groupLeaderManagementGroupMemberAge = itemView.findViewById(R.id.groupLeaderManagementGroupMemberAge);
             groupLeaderManagementGroupMemberField = itemView.findViewById(R.id.groupLeaderManagementGroupMemberField);
             upgradeManager = itemView.findViewById(R.id.upgradeManager);
-
             memberOut.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    UiHelper.dialogStart(itemView.getContext(),"탈퇴 시키시겠습니까?", false);
+                    System.out.println("error click");
+                    UiHelper.dialogStart(itemView.getContext(),"탈퇴 시키시겠습니까?", false,id);
+
                 }
             });
 
