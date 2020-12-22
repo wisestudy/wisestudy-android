@@ -15,7 +15,6 @@
 
 **Repository for each part**
 
-- [Android part](https://github.com/wisestudy/wisestudy-android)
 - [Server part](https://github.com/wisestudy/wisestudy-server)
 
 ## Environment
