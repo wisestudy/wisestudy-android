@@ -19,8 +19,7 @@
 
 ## Environment
 
-**System Architecture**
-![system_architecture]
+**System Architecture**(/image/SystemArchitecture.png)
 
 - **Client**:
   - OS: Android SDKs
@@ -40,7 +39,7 @@
   - RDS
 
 **Software Stack**
-![software stack](/images/software_stack.png)
+![software stack](/image/software_stack.png)
 
 ---
 
