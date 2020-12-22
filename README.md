@@ -40,7 +40,7 @@
   - RDS
 
 **Software Stack**
-![software stack](/image/softwareStack.png)
+![software stack](https://user-images.githubusercontent.com/54352208/102881593-6ecf7080-4490-11eb-9469-1243bfb22710.png)
 
 ---
 
