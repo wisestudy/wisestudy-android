@@ -20,7 +20,7 @@
 ## Environment
 
 **System Architecture**
-![SystemArchitecture](/image/systemArchitecture.png)
+![SystemArchitecture](https://user-images.githubusercontent.com/54352208/102881597-70009d80-4490-11eb-8ef9-f4cee3669f94.png)
 
 - **Client**:
   - OS: Android SDKs
