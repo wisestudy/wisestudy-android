@@ -19,7 +19,8 @@
 
 ## Environment
 
-**System Architecture**(/image/SystemArchitecture.png)
+**System Architecture**
+![SystemArchitecture](/image/SystemArchitecture.png)
 
 - **Client**:
   - OS: Android SDKs
